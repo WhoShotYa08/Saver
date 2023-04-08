@@ -7,6 +7,7 @@ websites = ['https://www.pnp.co.za/pnpstorefront/pnp/en/specials-landing',
             'https://www.woolworths.co.za/cat/Food/Fruit-Vegetables-Salads/_/N-lllnam?No=60&Nrpp=60']
 
 
+
 def is_website_online(url):
     '''
     Confirms whether the website is active
@@ -15,6 +16,10 @@ def is_website_online(url):
         identify_website(url)
         return True
     return False
+
+def store_data(site):
+    file = open(site+".csv", "w")
+    return csv.writer(file)
 
 
 def identify_website(site):
@@ -37,8 +42,9 @@ def beautiful_data(site):
     html_text = BeautifulSoup(website_resource(site).text, 'lxml')
     return html_text
 
-def pnp_scrapper(data):
+def pnp_scrapper(data, website):
     container = data.find_all("div", class_="item js-product-card-item product-card-grid")
+    file = store_data(website.split(".")[1])
     
     for item in container:
         try:
@@ -51,23 +57,23 @@ def pnp_scrapper(data):
         except:
             continue
 
-def shoprite_scraper(data):
-    pass
+def shoprite_scraper(data, website):
+    container = data.find_all("div", class_="item js-product-card-item product-card-grid")
+    file = store_data(website.split(".")[1])
 
 
-def woolies_scraper(data):
-    pass
+def woolies_scraper(data, website):
+    container = data.find_all("div", class_="item js-product-card-item product-card-grid")
+    file = store_data(website.split(".")[1])
 
 
 for x in range(len(websites)):
-    print(websites[x])
     if is_website_online(websites[x]):
         website_url = identify_website(websites[x])
         print(website_url)
         if 'pnp' in website_url:
-            print("I am here now")
-            pnp_scrapper(beautiful_data(websites[x]))
+            pnp_scrapper(beautiful_data(websites[x]), websites[x])
         elif 'shoprite' in website_url:
-            shoprite_scraper(beautiful_data(websites[x]))
+            shoprite_scraper(beautiful_data(websites[x]), websites[x])
         else:
-            woolies_scraper(beautiful_data(websites[x]))
+            woolies_scraper(beautiful_data(websites[x]), websites[x])
