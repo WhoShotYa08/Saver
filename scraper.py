@@ -42,20 +42,24 @@ def beautiful_data(site):
     html_text = BeautifulSoup(website_resource(site).text, 'lxml')
     return html_text
 
+
 def pnp_scrapper(data, website):
     container = data.find_all("div", class_="item js-product-card-item product-card-grid")
     file = store_data(website.split(".")[1])
     
+    file.writerow(['Name', 'Price', "Discount", "image Link"])
     for item in container:
         try:
-            itemName = item.find('div', class_='item-name').text
-            itemCurrentPrice = item.find('div', class_='currentPrice').text.lstrip()
+            item_name = item.find('div', class_='item-name').text
+            current_price = item.find('div', class_='currentPrice').text.lstrip()
             itemSmartPriceContainer = item.find('div', class_="promotionContainer promotionsShortText")
-            smartPrice = itemSmartPriceContainer.a.span.text
+            smart_price = itemSmartPriceContainer.a.span.text
             picture = item.find('picture').img['src']
 
         except:
             continue
+
+        file.writerow([item_name, current_price, smart_price, picture])
 
 def shoprite_scraper(data, website):
     container = data.find_all("div", class_="item js-product-card-item product-card-grid")
@@ -70,7 +74,6 @@ def woolies_scraper(data, website):
 for x in range(len(websites)):
     if is_website_online(websites[x]):
         website_url = identify_website(websites[x])
-        print(website_url)
         if 'pnp' in website_url:
             pnp_scrapper(beautiful_data(websites[x]), websites[x])
         elif 'shoprite' in website_url:
