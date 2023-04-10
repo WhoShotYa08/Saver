@@ -3,7 +3,7 @@ import csv
 from bs4 import BeautifulSoup
 
 websites = ['https://www.pnp.co.za/pnpstorefront/pnp/en/specials-landing',
-            'https://www.shoprite.co.za/all-xtra-savings',
+            'https://www.shoprite.co.za/specials?q=%3AspecialsRelevance%3AbrowseAllStoresFacet%3AbrowseAllStoresFacet%3AbrowseAllStoresFacetOff%3AbrowseAllStoresFacetOff&page=1',
             'https://www.woolworths.co.za/cat/Food/Fruit-Vegetables-Salads/_/N-lllnam?No=60&Nrpp=60']
 
 
@@ -62,14 +62,35 @@ def pnp_scrapper(data, website):
         file.writerow([item_name, current_price, smart_price, picture])
 
 def shoprite_scraper(data, website):
-    container = data.find_all("div", class_="item js-product-card-item product-card-grid")
+    container = data.find_all("figure", class_="item-product__content")
     file = store_data(website.split(".")[1])
+
+    file.writerow(['Name', 'Price', "Discount", "image Link"])
+    for item in container:
+
+        try:
+            item_name = item.find("a", class_="product-listening-click")['title']
+            before_price = item.find("span", class_="before").text
+            smart_price = item.find("span", class_="now").text
+            picture = item.find("img", class_="lazyload")['src']
+
+        except:
+            continue
+
+        file.writerow([item_name, before_price, smart_price, picture])
 
 
 def woolies_scraper(data, website):
     container = data.find_all("div", class_="item js-product-card-item product-card-grid")
     file = store_data(website.split(".")[1])
 
+    file.writerow(['Name', 'Price', "Discount", "image Link"])
+    for item in container:
+        try:
+            pass
+        except:
+            continue
+        # file.writerow([item_name, current_price, smart_price, picture])
 
 for x in range(len(websites)):
     if is_website_online(websites[x]):
