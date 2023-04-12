@@ -70,7 +70,7 @@ def shoprite_scraper(data, website):
 
         try:
             item_name = item.find("a", class_="product-listening-click")['title']
-            before_price = item.find("span", class_="before").text
+            before_price = item.find("div", class_="special-price__price").span.text
             smart_price = item.find("span", class_="now").text
             picture = item.find("img", class_="lazyload")['src']
 
