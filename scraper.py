@@ -77,7 +77,7 @@ def shoprite_scraper(data, website):
         except:
             continue
 
-        file.writerow([item_name, before_price, smart_price, picture])
+        file.writerow([item_name, before_price,smart_price, picture])
 
 
 def woolies_scraper(data, website):
@@ -92,12 +92,22 @@ def woolies_scraper(data, website):
             continue
         # file.writerow([item_name, current_price, smart_price, picture])
 
-for x in range(len(websites)):
-    if is_website_online(websites[x]):
-        website_url = identify_website(websites[x])
-        if 'pnp' in website_url:
-            pnp_scrapper(beautiful_data(websites[x]), websites[x])
-        elif 'shoprite' in website_url:
-            shoprite_scraper(beautiful_data(websites[x]), websites[x])
-        else:
-            woolies_scraper(beautiful_data(websites[x]), websites[x])
+def main():
+    """
+    runs the entire program 
+    """
+
+    #iterates over the list of given websites
+    for x in range(len(websites)):
+        if is_website_online(websites[x]):
+            website_url = identify_website(websites[x])
+            if 'pnp' in website_url:
+                pnp_scrapper(beautiful_data(websites[x]), websites[x])
+            elif 'shoprite' in website_url:
+                shoprite_scraper(beautiful_data(websites[x]), websites[x])
+            else:
+                woolies_scraper(beautiful_data(websites[x]), websites[x])
+
+
+if __name__ == "__main__":
+    main()
