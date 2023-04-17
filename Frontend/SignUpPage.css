@@ -31,4 +31,34 @@ svg {
     font-size: 2em;
     user-select: none;
 }
+/* Style the navigation links */
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 40px;
+    color: black
+}
+
+/* Style the underline effect of the navigation links */
+.navigation a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -6px;
+    height: 3px;
+    background-color: orangered;
+    border-radius: 5px;
+    transform-origin: left;
+    transform: scaleX(0);
+    /* transition: tranform .5s; */
+}
+
+/* Add the underline effect on hover of the navigation links */
+.navigation a:hover::after{
+    transform: scaleX(1);
+}
+
 
