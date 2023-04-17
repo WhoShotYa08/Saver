@@ -150,3 +150,39 @@ button {
 .loginPage-link a:hover {
     color: orange;
 }
+
+/* Styles terms and conditions section */
+.Ts_Cs {
+    margin: -4px 0 14px;
+    font-size: .9em;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Styles link in terms and conditions section */
+.Ts_Cs label a {
+    font-weight: 600; 
+    text-decoration: none;
+    color: orange;
+}
+
+/* Styles checkbox in terms and conditions section */
+.Ts_Cs label input {
+    margin-right: 3px;
+}
+
+/* Styles link in login page footer */
+.loginPage-link p a {
+    font-weight: 600; 
+    text-decoration: none;
+}
+
+/* underline on hover for link in login page footer */
+.loginPage-link p a:hover {
+    text-decoration: underline;
+}
+
+/* underline on hover for link in terms and conditions section */
+.Ts_Cs label a:hover{
+    text-decoration: underline;
+}
