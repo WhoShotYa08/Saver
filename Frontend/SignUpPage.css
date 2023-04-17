@@ -61,4 +61,92 @@ svg {
     transform: scaleX(1);
 }
 
+/* Style the signup box or container */
+.signup-box {
+    position: absolute;
+    top: 11%;
+    width: 480px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -2%;
+    margin-top: 5%;
+    z-index: 4;
 
+}
+
+/* Style the heading of the signup form */
+h2 {
+    font-size: 2em;
+    text-align: center;
+}
+
+/* Style the input boxes of the signup form */
+.input-box {
+    position: relative;
+    width: 320px;
+    margin: 30px 0;
+   
+}
+
+/* Style the label for the input boxes */
+.input-box label {
+    position: absolute;
+    left: 25px;
+    transform: translateY(-20%);
+    font-size: 1em;
+    pointer-events: none;
+    bottom: 18px;
+}
+
+/* Style the input boxes of the signup form */
+.input-box input {
+    width: 100%;
+    height: 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(141, 141, 141);
+    outline: none;
+    font-size: 1em;
+    color: black;
+    padding-left: 20px;
+    padding-right: 5px;
+   
+}
+
+/* Style the icon of the input boxes */
+.input-box .icon {
+    position: absolute;
+    right: px;
+    font-size: 1.2em;
+    bottom: 16px;
+}
+
+/* Styling for button */
+button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1 em;
+    color: #000;
+    background-color: orange;
+    font-weight: 500;
+}
+
+/* Styles for login page link */
+.loginPage-link {
+    font-size: .9em;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+/* link color on hover for login page links */
+.loginPage-link a:hover {
+    color: orange;
+}
