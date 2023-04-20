@@ -1,0 +1,89 @@
+/* Applies some basic styling to all elements on the page */
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    box-sizing: 0;
+    padding: 0;
+}
+
+/* Positions and styles an SVG element */
+svg {
+  position: absolute;
+  right: 0%;
+  transform: translateX();
+  z-index: 2;
+  fill: orange; 
+  rotate: 180deg;
+  z-index: 2;
+}
+
+/* Positions a section element */
+section{
+    position: relative;
+    z-index: 3;
+}
+
+/* Styles an h1 element */
+h1 {
+    position: relative;
+    color: black;
+    text-align: center;
+    top:70px;
+}
+
+/* Styles a header element */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 50px;
+    background-color: transparent;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    /* right: 20px; */
+    align-items: center;
+}
+
+/* Styles a logo element */
+.logo {
+    font-size: 2em;
+    user-select: none;
+}
+
+/* Styles navigation links */
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 40px;
+    color: black;
+}
+
+/* Adds an underline effect to navigation links */
+.navigation a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -6px;
+    height: 3px;
+    background-color: orangered;
+    border-radius: 5px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: tranform .5s;
+}
+
+/* underline effect when hovering over navigation links */
+.navigation a:hover::after{
+    transform: scaleX(1);
+}
+
+/* Positions and styles a p element */
+p{
+    position: relative;
+    top:80px;
+    padding: 20px;
+}

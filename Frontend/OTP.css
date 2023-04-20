@@ -1,0 +1,55 @@
+/* Set default styles for all elements */
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(to bottom left,orange 50%,white 50%) ;
+}
+
+/* Style the container element */
+.container {
+    position: relative;
+    left: 10%;
+    top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80vh;
+    
+}
+
+#phone_icon {
+    font-size: 10em;
+    color: whitesmoke;
+}
+
+#otp_code {
+    border-radius: 10px;border: none;
+    padding: 1em;
+    width: 3em;
+    background-color: rgb(228, 228, 228);
+    border-bottom: 2px solid orange;
+    outline: none;
+    width: fit-content;
+}
+
+button {
+    padding: 10px;
+    width: 7em;
+    border-radius: 5px;
+    border: none;
+    background-color: orange;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}

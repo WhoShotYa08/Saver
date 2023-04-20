@@ -139,6 +139,13 @@ button {
     font-weight: 500;
 }
 
+button a {
+    text-decoration: none;
+    color: antiquewhite;
+    font-weight: bold;
+}
+
+
 /* Styles for login page link */
 .loginPage-link {
     font-size: .9em;
