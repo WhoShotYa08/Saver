@@ -1,16 +1,46 @@
 var passwd = document.getElementById("password");
 
 
-setInterval(1000);
 function verifyEmail(){
-    
-
+    let list = document.getElementsByTagName('li');
     if(passwd.focus()){
-        console.log("focused")
+        for(let i = 0; i < 4; i++){
+            if(includesCaptitals){
+                console.log(list[0].innerHTML);
+                list[0].setAttribute("class", "correct"); 
+            }
+
+            if(includeSpecialChar){
+                console.log(list[1].innerHTML);
+                list[1].setAttribute("class", "correct");
+            }
+        }
     }
-    else{
-        console.log("not focused")
-    }
+
 }
 
-document.addEventListener("focus", "password");
+function includesCaptitals(){
+
+    return /[A-Z]/.test(passwd.textContent);
+}
+
+function includeSpecialChar() {
+    const specialChar = ['!@#$%^&*()_+:"<>?/\\']
+    let password = passwd.value;
+
+    for( let x = 0; x < specialChar.length; x++){
+        if(password.includes(specialChar[x])){
+            return true;
+        }
+    }
+    return false;
+}
+
+function ListItem() {
+    let li = document.createElement("li");
+
+    return li
+}
+
+
+passwd.addEventListener("focus", verifyEmail());
