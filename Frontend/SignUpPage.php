@@ -4,71 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="SignUpPage.css" />
+    <title>Sign Up</title>
+    <!-- <link rel="stylesheet" href="SignUpPage.css" /> -->
+    <script src="email.js" defer></script>
   </head>
   <body>
-  <?php
-      include "validateInput.php";
-      include "dBConnection.php";
-
-
-      echo "<br>";
-      $databaseName = "CREATE DATABASE UserDetails";
-      
-      $selectDB = mysqli_select_db($createConnection, "UserDetails");
-      $createTable = "CREATE TABLE signUp_details(
-      CustomerID INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      firstName varchar(50) NOT NULL,
-      lastName varchar(50) NOT NULL,
-      emailAddress varchar(100) NOT NULL,
-      cellphoneNum INT(10) NOT NULL,
-      userPassword varchar(20) NOT NULL,
-      otp INT(5),
-      verified BOOLEAN DEFAULT false,
-      timeReg TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-      )";
-
-      
-      $checkUser = "SELECT * FROM signUp_details WHERE emailAddress='$emailAddress'";
-
-      $runcheckUser = mysqli_query($createConnection, $checkUser);
-      $rowCheck = mysqli_num_rows($runcheckUser);
-
-      if($rowCheck == 0){
-        if($passWord === $confirmPassword){
-          $insertUserData = "INSERT INTO 'signUp_details' ('firstName', 'lastName', 'emailAddress', 'cellphoneNum', 'userPassword', 'timeReg' )VALUES('$name', '$surname', '$emailAddress', '$cellphoneNum', '$password')";
-
-          $runInsert = mysqli_query($createConnection,  $insertUserData);
-          if($runInsert == true){
-            
-          }
-        }
-      }
-
-      
-   ?>
     <!-- SVG element to create a background shape -->
     <svg class="BackgroundShape" height="640" width="1280">
       <polygon id="SideTriangle" points="0, 0 1300, 645 0, 645"/>
   </svg>
   <!-- Sign-up form -->
   <div class="signup-box">     
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+    <form action="dBConnection.php" method="post" >
       <!-- Heading for signup field -->
       <h2>Sign-Up</h2>
             
       <!-- Full name input field -->
       <div class="input-box">
           <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-          <input type="text" required placeholder="e.g Johnson" name="name" > <span value="<?php echo $nameError ?>"></span>
+          <input type="text" required placeholder="e.g Johnson" name="name">
           <label for="">Full name</label>
       </div>
 
       <!-- Surname input field -->
       <div class="input-box">
           <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-          <input type="text" required placeholder="e.g Smith" name="surname" value="<?php echo $surnameError ?>">
+          <input type="text" required placeholder="e.g Smith" name="surname">
           <label for="">Surname</label>
       </div>
 
@@ -88,23 +49,29 @@
     <!-- Password input field -->
     <div class="input-box">
         <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-        <input type="password" required placeholder="e.g ********" name="password" minlength="8">
+        <input type="password" required placeholder="e.g ********" id="password" name="password">
         <label for="">Password</label>
+        <ul>
+          <!-- <li>Atleast one capital letter</li>
+          <li>Atleast one special Character</li>
+          <li>length > 8</li>
+          <li>Atleast one digit</li> -->
+        </ul>
     </div>
       <!-- Confirm password input field -->
       <div class="input-box">
         <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-        <input type="password" required placeholder="e.g ********" name="confirmPassword" minlength="8">
+        <input type="password" required placeholder="e.g ********" name="confirmPassword">
         <label for="">Confirm Password</label>
     </div>
 
     <!-- Terms and Conditions checkbox -->
     <div class="Ts_Cs">
-        <label for=""><input type="checkbox" name="TnCs">I accept the <a href="Ts_Cs.html">Terms and Conditions</a></label>
+        <label for=""><input type="checkbox">I accept the <a href="Ts_Cs.html">Terms and Conditions</a></label>
     </div>
     
     <!-- Sign-up button -->
-    <button>Sign-Up</button>
+    <button><a href="OTP.php">Sign-Up</a> </button>
     <!-- Login page link -->
     <div class="loginPage-link">
         <p>Already have an account? <a href="LoginPage.html">Login here</a></p>
@@ -113,6 +80,9 @@
   </div>
    <!-- Ionicons script to display icons in input fields -->
    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-
+   <?php
+    // include "sendEmail.php";
+    include "dBConnection.php";
+   ?>
   </body>
 </html>
