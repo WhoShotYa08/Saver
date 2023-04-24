@@ -14,7 +14,7 @@
             <div id="phone_icon"><ion-icon name="phone-portrait-outline"></ion-icon></div><br>
             <h2>Verification</h2><br>
             <p>Enter <b>OTP code</b> sent to your number:</p><br>
-            <input type="password" id="otp_code" placeholder="Enter OTP here" name="OTP"><br>
+            <input type="password" id="otp_code" placeholder="Enter OTP here" name="otp"><br>
             <p><?php //echo $invalidOTP;?></p>
             <!-- <p><?php //echo $success;?></p> -->
             <button><a href="#"><b>Verify</b></a></button>
@@ -25,7 +25,6 @@
     <?php 
         include "dBConnection.php";
         $invalidOTP = "Please Enter valid OTP";
-        $otp = $_POST["OTP"];
         function verifyOTP($otp, $invalidOTP, $createConnection, $emailAddress ){
             $getOTP = "SELECT `otp` FROM `signUp_details`";
             $runOTP = mysqli_query($createConnection, $getOTP);

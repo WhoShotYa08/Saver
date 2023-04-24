@@ -15,15 +15,16 @@
   </svg>
   <!-- Sign-up form -->
   <div class="signup-box">     
-    <form action="dBConnection.php" method="post" >
+    <form action="dBConnection.php" method="POST" >
       <!-- Heading for signup field -->
       <h2>Sign-Up</h2>
-            
+        
       <!-- Full name input field -->
       <div class="input-box">
           <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
           <input type="text" required placeholder="e.g Johnson" name="name">
           <label for="">Full name</label>
+          
       </div>
 
       <!-- Surname input field -->
@@ -68,10 +69,11 @@
     <!-- Terms and Conditions checkbox -->
     <div class="Ts_Cs">
         <label for=""><input type="checkbox">I accept the <a href="Ts_Cs.html">Terms and Conditions</a></label>
+        <!-- <p><?php //echo $error;?></p> -->
     </div>
     
     <!-- Sign-up button -->
-    <button><a href="OTP.php">Sign-Up</a> </button>
+    <button name="signUp" id="signUp"><a >Sign-Up</a> </button>
     <!-- Login page link -->
     <div class="loginPage-link">
         <p>Already have an account? <a href="LoginPage.html">Login here</a></p>
@@ -80,9 +82,9 @@
   </div>
    <!-- Ionicons script to display icons in input fields -->
    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-   <?php
-    // include "sendEmail.php";
+
+  <?php 
     include "dBConnection.php";
-   ?>
+  ?>
   </body>
 </html>

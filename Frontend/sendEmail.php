@@ -1,28 +1,35 @@
 <?php 
     include "dBConnection.php";
-    include "Saver/vendor/autoload.php";
+    // include "vendor/autoload.php";
+    require_once('vendor/autoload.php');
 
     use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
+    function sendMail($otpCode, $emailAddress){
+        $mail = new PHPMailer();
 
-    $mail = new PHPMailer(true);
+        // Set SMTP settings
+        $mail->isSMTP();
+        $mail->Host = 'smtp-bobdsw.alwaysdata.net';
+        $mail->Port = 587;
+        $mail->SMTPAuth = true;
+        $mail->Username = 'bobdsw@alwaysdata.net';
+        $mail->Password = 'connection.php1';
+        $mail->SMTPSecure = "tls";
 
-    $mail->isSMTP();
-    $mail->SMTPAuth = true;
+        // Set email content
+        $mail->setFrom('toj9934@gmail.com', 'Your Name');
+        $mail->addAddress($emailAddress);
+        $mail->Subject = 'Your OTP for specials';
+        $mail->Body = $otpCode;
 
-    $mail->Host = "smtp-relay.sendinblue.com";
-    $mail->SMTPSecure = PHPMailer :: ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
+        // Send email
+        if ($mail->send()) {
+            echo 'Email sent successfully.';
+        } else {
+            echo 'Error: ' . $mail->ErrorInfo;
+        }
+    }
+    sendMail($otpCode, $emailAddress);
+    
 
-    $mail->Username = "toj9934@gmail.com";
-    $mail->Password = "teamofjohn";
-
-    $fromEmail = "toj9934@gmail.com";
-    $mail->setFrom($fromEmail, "Team of John");
-    $mail->addAddress($emailAddress, $name);
-
-    $mail->Subject = "Complete Verification From TEAM OF JOHN";
-    $mail->Body = $otpCode;
-
-    $mail->send();
 ?>

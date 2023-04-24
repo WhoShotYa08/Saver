@@ -1,70 +1,91 @@
 <?php 
-  include "validateInput.php";
-  
-  $serverName = "localhost";
-  $userName = "root";
-  $passWord = "";
+    //creating connection to database
+    $serverName = "localhost";
+    $userName = "root";
+    $passWord = "";
     
-  $createConnection = mysqli_connect($serverName, $userName, $passWord);
+    $createConnection = mysqli_connect($serverName, $userName, $passWord);
+      
+    if($createConnection == false){
+      echo "Connection Failed"; 
+      die("Connection Failed".mysqli_connect_error());
+    }
+    else{
+      echo "Connection Successful";
+    }
+
+
+    echo "<br>";
+    //creating table to database
+    $databaseName = "CREATE DATABASE UserDetails";
+    //same as use UserDetails in ms sql server
+    $selectDB = mysqli_select_db($createConnection, "UserDetails");
+
+    //creating table called signUp_details in database UserDetails
+    $createTable = "CREATE TABLE signUp_details(
+    CustomerID INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstName varchar(50) NOT NULL,
+    lastName varchar(50) NOT NULL,
+    emailAddress varchar(100) NOT NULL,
+    cellphoneNum INT(10) NOT NULL,
+    userPassword varchar(20) NOT NULL,
+    otp INT(5),
+    timeReg TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )";
+
+
     
-  if($createConnection == false){
-    echo "Connection Failed"; 
-    die("Connection Failed".mysqli_connect_error());
-  }
-  else{
-    echo "Connection Successful";
-  }
 
-
-  echo "<br>";
-  $databaseName = "CREATE DATABASE UserDetails";
-  
-  $selectDB = mysqli_select_db($createConnection, "UserDetails");
-  $createTable = "CREATE TABLE signUp_details(
-  CustomerID INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  firstName varchar(50) NOT NULL,
-  lastName varchar(50) NOT NULL,
-  emailAddress varchar(100) NOT NULL,
-  cellphoneNum INT(10) NOT NULL,
-  userPassword varchar(20) NOT NULL,
-  otp INT(5),
-  verified BOOLEAN DEFAULT false,
-  timeReg TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-  )";
-
-
-
-  
-  $checkUser = "SELECT * FROM signUp_details WHERE emailAddress='$emailAddress'";
-
-  $runcheckUser = mysqli_query($createConnection, $checkUser);
-  $rowCheck = mysqli_num_rows($runcheckUser);
-
-  function insertData($rowCheck, $passWord, $confirmPassword, $emailAddress, $name, $surname, $cellphoneNum, $createConnection){
+    //Generating OTP then storing it in database
     $otpCode = rand(10000, 99999);
-    if($rowCheck == 0){
-      if($passWord === $confirmPassword){
-        $insertUserData = "INSERT INTO `signUp_details` (`firstName`, `lastName`, `emailAddress`, `cellphoneNum`, `userPassword`, `otp`) VALUES ('$name', '$surname', '$emailAddress', '$cellphoneNum', '$passWord', '$otpCode')";
-        $sendMail = mail($emailAddress, "OTP", $otpCode);
-        // if($sendMail == true){
-        //   echo "trueuu";
-        // }
-        // else{
-        //   echo "falseee";
-        // }
-        if(mysqli_query($createConnection, $insertUserData)==true){
-          echo "Data inserted into table successfully";
+    
+    function sendData($otpCode, $createConnection){
+      $name =  $surname = $emailAddress = $cellphoneNum = $password = $confirmPassword = "";
+  
+      function clearInput($userInput){
+        $userInput = trim($userInput);
+        $userInput = stripslashes($userInput);
+        $userInput = htmlspecialchars($userInput);
+        return $userInput;
+      }
+      
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $name = clearInput($_POST["name"]);
+        $surname = clearInput($_POST["surname"]);
+        $emailAddress = clearInput($_POST["email"]);
+        $cellphoneNum = clearInput($_POST["cellNumber"]);
+        $passWord = clearInput($_POST["password"]);
+        $confirmPassword = clearInput($_POST["confirmPassword"]);
+
+        //queryin the database to see if email address entered by user is available in database
+        $checkUser = "SELECT * FROM signUp_details WHERE emailAddress='{$emailAddress}'";
+        
+        $runcheckUser = mysqli_query($createConnection, $checkUser);
+        //getting row number.....should return number greater than 0 if user exists
+        $rowCheck = mysqli_num_rows($runcheckUser);
+
+        if($rowCheck>0){
+          $name = "You are a registered user, please login";
         }
         else{
-          echo "Data insertion failed".mysqli_error($createConnection);
+          if($passWord == $confirmPassword){
+            $insertQuery = "INSERT INTO signUp_details (firstName, lastName, emailAddress, cellphoneNum, userPassword, otp) VALUES ('$name', '$surname', '$emailAddress', $cellphoneNum, '$passWord', $otpCode)";
+
+            if(mysqli_query($createConnection, $insertQuery) == true){
+              echo "New record inserted successfully";
+            }
+            else{
+              echo "No record inserted, Please try again".mysqli_error($createConnection);
+            }
+          }
         }
       }
-      mysqli_close($createConnection);
-      
     }
-  }
 
-  insertData($rowCheck, $passWord, $confirmPassword, $emailAddress, $name, $surname, $cellphoneNum, $createConnection);
-
+    if(isset($_POST["signUp"]) == true){
+      sendData($otpCode, $createConnection);
+      header('Location: OTP.php');
+      exit();
+    }
 
 ?>
