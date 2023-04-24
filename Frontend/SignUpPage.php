@@ -16,7 +16,7 @@
   <!-- Sign-up form -->
   <div class="signup-box">     
     <form action="dBConnection.php" method="POST" >
-      <!-- Heading for signup field -->
+      Heading for signup field
       <h2>Sign-Up</h2>
         
       <!-- Full name input field -->
