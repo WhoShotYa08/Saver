@@ -1,7 +1,7 @@
 var popupDiv = document.getElementById('forgotPopUp');
 
 function popUp(){
-    popupDiv.style.display = 'block';
+    popupDiv.style.display = 'flex';
 }
 
 function popDown(){

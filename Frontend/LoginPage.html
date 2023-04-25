@@ -41,7 +41,7 @@
                 </div>
 
                 <!-- Login Button -->
-                <button>Login</button>
+                <button id="login">Login</button>
 
                 <!-- Register Link -->
                 <div class="register-link">
@@ -51,16 +51,19 @@
         </div>
         <!-- Forgot password pop up -->
         <div id="forgotPopUp">
-            <div class="cancel"><input type="button" id="cancelButton" value="X" onclick="popDown()"></div>
-            <!-- Input Box (Email) -->
-            <div class="input-box">
-                <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                <input type="email" required placeholder="Email">
-                <!-- <label>Email</label> -->
-            </div>
-
-            <!-- Login Button -->
-            <button>Send OTP</button>
+            <input type="button" id="cancelButton" value="X" onclick="popDown()">
+            <form action="">
+                <!-- Input Box (Email) -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" required placeholder="Email">
+                    <!-- <label>Email</label> -->
+                </div>
+                <button id="resetPassword">Reset password</button>
+    
+                <!-- Login Button -->
+                <!-- <button>Send OTP</button> -->
+            </form>
         </div>
     </section>
     </div>
