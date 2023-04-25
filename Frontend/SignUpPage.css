@@ -67,7 +67,7 @@ svg {
     position: absolute;
     box-sizing: border-box;
     top: 11%;
-    width: 480px;
+    width: 40%;
     height: fit-content;
     background-color: #fff;
     border-radius: 20px;
@@ -198,8 +198,8 @@ button a {
 
 /* validators */
 
-.validators{
-    /* display: none; */
+#validators{
+    display: none;
 }
 
 
@@ -209,15 +209,16 @@ button a {
 
 .wrong ::before{
     position: relative;
-    content: "&#10006;";
+    content: "&#10006";
     left: -35px;
 }
 
 .correct{
     color: green;
+
 }
 
 .correct::before{
     position: relative;
-    content: "&#10004";
+    content: "&#10004;";
 }

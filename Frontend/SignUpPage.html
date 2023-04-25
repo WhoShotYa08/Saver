@@ -50,15 +50,15 @@
     <!-- Password input field -->
     <div class="input-box">
         <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-        <input type="password" required placeholder="Password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" requird>
+        <input type="password" required placeholder="Password" id="password" name="password" requird>
         <!-- <label for="">Password</label> -->
 
     </div>
 
-    <div class="validators">
+    <div id="validators">
       <p id="capital" class="wrong">Uppercase letter</p>
       <p id="lower" class="wrong">Lowercase letter</p>
-      <p id="minChar" class="wrong">Minimum 8 characters</p>
+      <p id="miniChar" class="wrong">Minimum 8 characters</p>
       <p id="specials" class="wrong">Special characters</p>
       <p id="number" class="wrong">Number</p>
     </div>
