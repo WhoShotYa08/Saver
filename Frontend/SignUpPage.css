@@ -220,5 +220,5 @@ button a {
 
 .correct::before{
     position: relative;
-    content: "&#10004;";
+    content: ">&#10004";
 }
