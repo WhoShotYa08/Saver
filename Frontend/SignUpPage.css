@@ -30,6 +30,7 @@ svg {
 .logo {
     font-size: 2em;
     user-select: none;
+
 }
 /* Style the navigation links */
 .navigation a {
@@ -64,6 +65,7 @@ svg {
 /* Style the signup box or container */
 .signup-box {
     position: absolute;
+    box-sizing: border-box;
     top: 11%;
     width: 480px;
     height: 500px;
@@ -114,15 +116,15 @@ h2 {
     color: black;
     padding-left: 20px;
     padding-right: 5px;
-   
+   text-align: left;
 }
 
 /* Style the icon of the input boxes */
 .input-box .icon {
     position: absolute;
-    right: px;
+    right: 95%;
     font-size: 1.2em;
-    bottom: 16px;
+    bottom: 5%;
 }
 
 /* Styling for button */

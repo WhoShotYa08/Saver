@@ -19,6 +19,20 @@ function verifyEmail(){
 
 }
 
+function passwdVisbility(){
+    let passwdElement = document.getElementById('password');
+    let visible = document.getElementById("checkbox");
+    
+    if (visible.checked){
+        passwdElement.type === "text";
+    }
+    else{
+        passwdElement.type === "password";
+    }
+
+
+}
+
 function includesCaptitals(){
 
     return /[A-Z]/.test(passwd.textContent);
