@@ -68,7 +68,7 @@ svg {
     box-sizing: border-box;
     top: 11%;
     width: 480px;
-    height: 500px;
+    height: fit-content;
     background-color: #fff;
     border-radius: 20px;
     display: flex;
@@ -77,7 +77,7 @@ svg {
     margin-left: -2%;
     margin-top: 5%;
     z-index: 4;
-
+    padding: 15px 10px;
 }
 
 /* Style the heading of the signup form */
@@ -194,4 +194,30 @@ button a {
 /* underline on hover for link in terms and conditions section */
 .Ts_Cs label a:hover{
     text-decoration: underline;
+}
+
+/* validators */
+
+.validators{
+    /* display: none; */
+}
+
+
+.wrong{
+    color: red;
+}
+
+.wrong ::before{
+    position: relative;
+    content: "&#10006;";
+    left: -35px;
+}
+
+.correct{
+    color: green;
+}
+
+.correct::before{
+    position: relative;
+    content: "&#10004";
 }

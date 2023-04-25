@@ -1,7 +1,6 @@
 var passwd = document.getElementById("password");
 
 
-
 function passwdVisbility(){
     let passwdElement = document.getElementById('password');
     let visible = document.getElementById("checkbox");
