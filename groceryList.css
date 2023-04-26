@@ -61,7 +61,7 @@ h2 {
     flex-direction: column;
     width: 80%;
     height: 80vh;
-    z-index: -1;
+    z-index: 0;
 }
 
 /* Style the product images */
