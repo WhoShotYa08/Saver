@@ -78,7 +78,7 @@ header {
     z-index: 3;
     bottom: 35vh;
     left: 29%;
-
+    display: none;
     border: 1px solid black;
 }
 .cancel{
