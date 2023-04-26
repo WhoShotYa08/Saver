@@ -30,6 +30,7 @@ svg {
 .logo {
     font-size: 2em;
     user-select: none;
+
 }
 /* Style the navigation links */
 .navigation a {
@@ -64,9 +65,10 @@ svg {
 /* Style the signup box or container */
 .signup-box {
     position: absolute;
+    box-sizing: border-box;
     top: 11%;
-    width: 480px;
-    height: 500px;
+    width: 40%;
+    height: fit-content;
     background-color: #fff;
     border-radius: 20px;
     display: flex;
@@ -75,7 +77,7 @@ svg {
     margin-left: -2%;
     margin-top: 5%;
     z-index: 4;
-
+    padding: 15px 10px;
 }
 
 /* Style the heading of the signup form */
@@ -114,15 +116,15 @@ h2 {
     color: black;
     padding-left: 20px;
     padding-right: 5px;
-   
+   text-align: left;
 }
 
 /* Style the icon of the input boxes */
 .input-box .icon {
     position: absolute;
-    right: px;
+    right: 95%;
     font-size: 1.2em;
-    bottom: 16px;
+    bottom: 5%;
 }
 
 /* Styling for button */
@@ -192,4 +194,31 @@ button a {
 /* underline on hover for link in terms and conditions section */
 .Ts_Cs label a:hover{
     text-decoration: underline;
+}
+
+/* validators */
+
+#validators{
+    display: none;
+}
+
+
+.wrong{
+    color: red;
+}
+
+.wrong ::before{
+    position: relative;
+    content: "&#10006";
+    left: -35px;
+}
+
+.correct{
+    color: green;
+
+}
+
+.correct::before{
+    position: relative;
+    content: ">&#10004";
 }
