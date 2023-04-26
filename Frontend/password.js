@@ -2,7 +2,6 @@ var passwdElement = document.getElementById("password");
 var number = document.getElementById("number");
 var lower = document.getElementById('lower');
 var capital = document.getElementById('capital');
-var special = document.getElementById('special');
 var miniChar = document.getElementById('miniChar');
 var text = document.getElementById("validators");
 
