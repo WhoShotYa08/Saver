@@ -6,13 +6,13 @@
     
     $createConnection = mysqli_connect($serverName, $userName, $passWord);
       
-    if($createConnection == false){
-      echo "Connection Failed"; 
-      die("Connection Failed".mysqli_connect_error());
-    }
-    else{
-      echo "Connection Successful";
-    }
+    // if($createConnection == false){
+    //   echo "Connection Failed"; 
+    //   die("Connection Failed".mysqli_connect_error());
+    // }
+    // else{
+    //   echo "Connection Successful";
+    // }
 
 
     echo "<br>";
