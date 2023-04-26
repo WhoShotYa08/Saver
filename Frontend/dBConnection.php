@@ -38,9 +38,9 @@
 
     //Generating OTP then storing it in database
     $otpCode = rand(10000, 99999);
-    
-    function sendData($otpCode, $createConnection){
-      $name =  $surname = $emailAddress = $cellphoneNum = $password = $confirmPassword = "";
+    $name =  $surname = $emailAddress = $cellphoneNum = $password = $confirmPassword = "";
+    function sendData($otpCode, $createConnection, $emailAddress, $cellphoneNum, $passWord, $name, $surname, $confirmPassword){
+      // $name =  $surname = $emailAddress = $cellphoneNum = $password = $confirmPassword = "";
   
       function clearInput($userInput){
         $userInput = trim($userInput);
@@ -83,7 +83,7 @@
     }
 
     if(isset($_POST["signUp"]) == true){
-      sendData($otpCode, $createConnection);
+      sendData($otpCode, $createConnection, $emailAddress, $cellphoneNum, $passWord, $name, $surname, $confirmPassword);
       header('Location: OTP.php');
       exit();
     }

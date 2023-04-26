@@ -24,8 +24,10 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <?php 
         include "dBConnection.php";
+        $otp = "";
+        $otp = $_POST["otp"];
         $invalidOTP = "Please Enter valid OTP";
-        function verifyOTP($otp, $invalidOTP, $createConnection, $emailAddress ){
+        function verifyOTP($otp, $invalidOTP, $createConnection, $emailAddress, ){
             $getOTP = "SELECT `otp` FROM `signUp_details`";
             $runOTP = mysqli_query($createConnection, $getOTP);
             if($otp == 00000){
