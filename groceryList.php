@@ -68,7 +68,7 @@
                     <span><b>Discount Price:  R12.99</b></span>
                 </div>
                 <!-- Input field for the quantity -->
-                <input type="number" placeholder="Quantity">
+                <input type="number" placeholder="Quantity" min="0" >
             </div>
     
             <br>
@@ -89,7 +89,7 @@
             <span><b>Discount Price:  R21.99</b></span>
             </div>
             <!-- Input field for the quantity -->
-            <input type="number" placeholder="Quantity">
+            <input type="number" placeholder="Quantity" min='0'>
             </div>
             
             <br>
@@ -109,7 +109,7 @@
             <span><b>Discount Price:  R39.99</b></span>
             </div>
             <!-- Input field for the quantity -->
-            <input type="number" placeholder="Quantity">
+            <input type="number" placeholder="Quantity" min="0">
             </div>
             
         </div>
