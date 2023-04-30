@@ -16,5 +16,4 @@ toggle.onclick = function(){
         cart.style.zIndex = 10;
     }
 
-    console.log(cart.style.zIndex);
 }
