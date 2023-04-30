@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="groceryList.js" defer></script>
     <link rel="stylesheet" href="groceryList.css">
 </head>
 <body>
@@ -17,7 +18,7 @@
                 <!-- Unordered list with a class of "navlist" -->
                 <ul class="navlist">
                     <!-- The hamburger toggle button for the menu -->
-                    <div class="toggle" onclick="this.classList.toggle('open')">
+                    <div class="toggle" id="toggle">
                         <div class="line"></div>
                         <div class="line"></div>
                         <div class="line"></div>
@@ -47,11 +48,11 @@
     </header>
     
 
-    <div class="container">
+    <div class="container" id="cart">
         <h2>My Grocery List</h2><br>
     
         <!-- The grocery cart section -->
-        <div class="cart">
+        <div class="cart" >
             <!-- First item in the grocery cart -->
             <div class="items">
                 <img src="https://th.bing.com/th/id/R.84177936ac6e4a80e1008d64e44ed62b?rik=36aOc%2fUJMs0f2w&pid=ImgRaw&r=0" alt="banana">
