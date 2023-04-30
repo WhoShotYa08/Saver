@@ -1,0 +1,149 @@
+/* Set default styles for all elements */
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the logo element */
+#logo {
+    padding-left: 2em;
+}
+
+/* Style the navigation menu list */
+.navlist {
+    position: relative;
+    top: .7em;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    color: #000;
+    padding: 10px;
+}
+
+
+/* Style the icons in the navigation menu */
+.icons {
+    font-size: 2em;
+    margin-left: 40px;
+    color: orange
+}
+
+.border {
+    color: orange;
+    background-color: orange;
+    height: 10em;
+}
+
+.profile_picture {
+    display: flex;
+    justify-content: center;
+
+}
+
+#profile_picture {
+    border-radius: 10em;
+}
+
+#edit_profile {
+    padding-top: 15em;
+    color: orange;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.profile_info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid gray ;
+    outline: none;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* ------------hamburger toggle button*----------------/
+
+/* Style the hamburger toggle button */
+.toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* Style the three lines in the hamburger toggle button */
+.toggle .line {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: transform 0.3s;
+}
+
+/* Rotate the first line when the menu is open */
+.toggle.open .line:first-of-type {
+    transform: rotate(-45deg) translate(-8px, 5px);
+}
+
+/* Hide the middle line when the menu is open */
+.toggle.open .line:nth-of-type(2) {
+    opacity: 0;
+}
+
+/* Rotate the last line when the menu is open */
+.toggle.open .line:last-of-type {
+    transform: rotate(45deg) translate(-8px, -5px);
+}
+
+/* Style the menu */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 70%;
+    background-color: #eee;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    border-radius: .4em;
+}
+
+/* Show the menu when the toggle button is clicked */
+.toggle.open + .menu {
+    transform: translateX(0);
+}
+
+/* Style the links in the menu */
+.menu a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+    margin: 20px 0;
+}
+
+/* Style the links in the menu when the hamburger toggle is open */
+.toggle.open + .menu a:hover {
+    background-color: orangered;
+    text-decoration: underline;
+    color: #eee;
+}
