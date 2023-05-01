@@ -66,7 +66,7 @@
                         <option value="5kg">5kg</option>
                     </select>
                     <span><b>Price:  R18.99</b></span>
-                    <span><b>Discount Price:  R12.99</b></span>
+                    <span><b>Discount Price:  R <span id="price">12.99</span></b></span>
                 </div>
                 <!-- Input field for the quantity -->
                 <input type="number" placeholder="Quantity" min="0" >
@@ -107,7 +107,7 @@
                 <option value="5kg">5kg</option>
             </select>
             <span><b>Price:  R50.99</b></span>
-            <span><b>Discount Price:  R39.99</b></span>
+            <span><b>Discount Price:  R  <span id="discountPrice">0</span></b></span>
             </div>
             <!-- Input field for the quantity -->
             <input type="number" placeholder="Quantity" min="0">
@@ -116,8 +116,8 @@
         </div>
         <br>
         <div class="checkout">
-            <span>Total Price: <span id="total_price">R200.50</span></span>
-            <span>Saving Price: <span id="saving_price">R50.75</span></span>
+            <span>Total Price: R<span id="total_price">200.50</span></span>
+            <span>Saving Price: R<span id="saving_price">0</span></span>
 
             <div class="buttons">
                 <button id="send_to_me">Send to me</button>
