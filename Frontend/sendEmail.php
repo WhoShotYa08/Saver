@@ -1,5 +1,5 @@
 <?php 
-    include "dBConnection.php";
+    // include "dBConnection.php";
     // include "vendor/autoload.php";
     require_once('vendor/autoload.php');
 

@@ -1,4 +1,5 @@
 <?php 
+  session_start();
     //creating connection to database
     $serverName = "localhost";
     $userName = "root";
@@ -6,13 +7,15 @@
     
     $createConnection = mysqli_connect($serverName, $userName, $passWord);
       
-    // if($createConnection == false){
-    //   echo "Connection Failed"; 
-    //   die("Connection Failed".mysqli_connect_error());
-    // }
-    // else{
-    //   echo "Connection Successful";
-    // }
+    if($createConnection == false){
+      echo "Connection Failed"; 
+      die("Connection Failed".mysqli_connect_error());
+    }
+    else{
+      echo "Connection Successful";
+    }
+
+    
 
 
     echo "<br>";
@@ -32,6 +35,23 @@
     otp INT(5),
     timeReg TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )";
+
+    // $alterTAble = "ALTER TABLE signUp_details ADD verified BOOLEAN DEFAULT false";
+    // if(mysqli_query($createConnection, $alterTAble)){
+    //   echo "TAble Altered";
+    // }
+    // else{
+    //   echo "table alter failed";
+    // }
+
+
+    //Uncomment the following to code to see if the table has been created
+    // if(mysqli_query($createConnection, $createTable) == true){
+    //   echo "Table successfully created";
+    // }
+    // else{
+    //   echo "Error 404";
+    // }
 
 
     
@@ -70,9 +90,10 @@
         else{
           if($passWord == $confirmPassword){
             $insertQuery = "INSERT INTO signUp_details (firstName, lastName, emailAddress, cellphoneNum, userPassword, otp) VALUES ('$name', '$surname', '$emailAddress', $cellphoneNum, '$passWord', $otpCode)";
-
+            include "sendEmail.php";
             if(mysqli_query($createConnection, $insertQuery) == true){
               echo "New record inserted successfully";
+              $_SESSION["email"] = $emailAddress;
             }
             else{
               echo "No record inserted, Please try again".mysqli_error($createConnection);

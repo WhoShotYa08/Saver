@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="LoginPage.css">
 </head>
 <body>
+    <?php 
+        // include "OTP.php";
+    ?>
     <!-- Background Shape -->
     <svg class="BackgroundShape" height="640" width="1280">
         <polygon id="SideTriangle" points="0, 0 1300, 645 0, 645"/>

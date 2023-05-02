@@ -1,3 +1,44 @@
+<?php 
+    session_start();
+    include "dBConnection.php";
+    $otp ="";
+    $invalidOTP = "Please Enter valid OTP";
+    $accVerified = "Your Account has been verified, you may now login";
+    // $emailAddress = "";
+    
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $otp = $_POST["otp"];
+        $intOTP = (int)$otp;
+        // $emailAddress = $_POST["email"];
+        echo $_SESSION["email"];
+        verifyOTP($intOTP, $invalidOTP, $createConnection, $_SESSION["email"], $accVerified, $otpCode);
+    }
+    function verifyOTP($intOTP, $invalidOTP, $createConnection, $emailAddress, $accVerified, $otpCode){
+        $getOTP = "SELECT `otp` FROM `signUp_details` WHERE `emailAddress` = '$emailAddress'";
+
+        $runOTP = mysqli_query($createConnection, $getOTP);
+        if($runOTP && mysqli_num_rows($runOTP) > 0){
+            $numRows = mysqli_fetch_assoc($runOTP);
+            $otpKey = $numRows["otp"];
+            if($intOTP == $otpKey){
+                $updateBool = "UPDATE signUp_details SET verified = true WHERE emailAddress = '$emailAddress'";
+                $updateOTP = "UPDATE signUp_details SET otp = 00000 WHERE emailAddress = '$emailAddress'";
+                mysqli_query($createConnection, $updateBool);
+                mysqli_query($createConnection, $updateOTP);
+                echo  $accVerified;
+                header("Location: LoginPage.php");
+                exit();
+            }
+            else{
+                echo $invalidOTP;
+            }
+        }
+        else{
+            echo "Error";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,56 +50,17 @@
 </head>
 <body>
 
-    <form action="dBConnection.php" method="post">
+    <form action="" method="POST">
         <div class="container">
             <div id="phone_icon"><ion-icon name="phone-portrait-outline"></ion-icon></div><br>
             <h2>Verification</h2><br>
             <p>Enter <b>OTP code</b> sent to your number:</p><br>
             <input type="password" id="otp_code" placeholder="Enter OTP here" name="otp"><br>
-            <p><?php //echo $invalidOTP;?></p>
-            <!-- <p><?php //echo $success;?></p> -->
-            <button name="submitOTP"><a href="#"><b>Verify</b></a></button>
+            <p><?php echo $invalidOTP;?></p>
+            <button name="submitOTP"><a href="LoginPage.php"><b>Verify</b></a></button>
         </div>
     </form>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <?php 
-        include "dBConnection.php";
-        
-        
-        $otp = "";
-        if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $otp = $_POST["otp"];
-
-        }
-        $invalidOTP = "Please Enter valid OTP";
-        function verifyOTP($otp, $invalidOTP, $createConnection, $emailAddress, ){
-            $getOTP = "SELECT `otp` FROM `signUp_details`";
-            $runOTP = mysqli_query($createConnection, $getOTP);
-            if($otp == 00000){
-                // if(isset($_POST["submitOTP"]) == true){
-                    
-                // }
-                // else{
-                //     echo "<script> $"
-                // }
-                $invalidOTP;
-                
-            }
-            else{
-                if($otp == $runOTP){
-                    $verified = "UPDATE `signUp_details` SET `verified`= 'true' WHERE `emailAddress`='$emailAddress'";
-                    $setOTP = "UPDATE `signUp_details` SET `otp`= '00000' WHERE `emailAddress`='$emailAddress'";
-                    mysqli_query($createConnection, $verified);
-                    mysqli_query($createConnection, $setOTP);
-                    $success = "You have successfully created your account, you may now login using your credentials";
-                }
-                else{
-                    echo $invalidOTP;
-                }
-            }
-        }
-        verifyOTP($otp, $invalidOTP, $createConnection, $emailAddress )
-    ?>
 </body>
 </html>
