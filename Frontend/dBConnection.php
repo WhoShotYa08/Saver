@@ -7,13 +7,13 @@
     
     $createConnection = mysqli_connect($serverName, $userName, $passWord);
       
-    // if($createConnection == false){
-    //   echo "Connection Failed"; 
-    //   die("Connection Failed".mysqli_connect_error());
-    // }
-    // else{
-    //   echo "Connection Successful";
-    // }
+    if($createConnection == false){
+      echo "Connection Failed"; 
+      die("Connection Failed".mysqli_connect_error());
+    }
+    else{
+      echo "Connection Successful";
+    }
 
     
 
@@ -21,6 +21,13 @@
     echo "<br>";
     //creating table to database
     $databaseName = "CREATE DATABASE UserDetails";
+
+    // if(mysqli_query($createConnection, $databaseName) == true){
+    //   echo "DB created";
+    // }
+    // else{
+    //   echo "DB created failed";
+    // }
     //same as use UserDetails in ms sql server
     $selectDB = mysqli_select_db($createConnection, "UserDetails");
 
