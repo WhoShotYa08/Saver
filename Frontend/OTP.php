@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+    // session_start();
     include "dBConnection.php";
     $otp ="";
     $invalidOTP = "Please Enter valid OTP";
