@@ -1,4 +1,3 @@
-<?php //session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,6 +19,7 @@
       <!-- Heading for signup field -->
       <h2>Sign-Up</h2>
         
+      <p> <?php $notRegistered; ?> </p>
       <!-- Full name input field -->
       <div class="input-box">
           <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
@@ -90,6 +90,7 @@
 
   <?php 
     include "dBConnection.php";
+    
   ?>
   </body>
 </html>

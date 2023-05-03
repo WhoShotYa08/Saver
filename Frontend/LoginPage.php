@@ -1,3 +1,6 @@
+<?php 
+    include "loginfile.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +12,6 @@
     <link rel="stylesheet" href="LoginPage.css">
 </head>
 <body>
-    <?php 
-        // include "OTP.php";
-    ?>
     <!-- Background Shape -->
     <svg class="BackgroundShape" height="640" width="1280">
         <polygon id="SideTriangle" points="0, 0 1300, 645 0, 645"/>
@@ -20,20 +20,22 @@
     <section>
         <!-- Login Box -->
         <div class="login-box">     
-            <form action="">
+            <form action="loginfile.php" method="post" >
                 <h2>Login</h2>
+                
 
+                <p id="incorrectLogin"> <?php $incorrectDetails; ?> </p>
                 <!-- Input Box (Email) -->
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="email" required placeholder="Email">
+                    <input type="email" required placeholder="Email" name="loginEmail">
                     <!-- <label>Email</label> -->
                 </div>
 
                 <!-- Input Box (Password) -->
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" required placeholder="Password">
+                    <input type="password" required placeholder="Password" name="loginPassword">
                     <!-- <label>Password</label> -->
                 </div>
 
@@ -44,7 +46,7 @@
                 </div>
 
                 <!-- Login Button -->
-                <button id="login">Login</button>
+                <button id="login" name="submitLogin">Login</button>
 
                 <!-- Register Link -->
                 <div class="register-link">
@@ -55,11 +57,11 @@
         <!-- Forgot password pop up -->
         <div id="forgotPopUp">
             <input type="button" id="cancelButton" value="X" onclick="popDown()">
-            <form action="">
+            <form action="" method="post">
                 <!-- Input Box (Email) -->
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="email" required placeholder="Email">
+                    <input type="email" required placeholder="Email" name="forgotEmailInput">
                     <!-- <label>Email</label> -->
                 </div>
                 <button id="resetPassword">Reset password</button>

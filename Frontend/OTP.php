@@ -54,6 +54,7 @@
         <div class="container">
             <div id="phone_icon"><ion-icon name="phone-portrait-outline"></ion-icon></div><br>
             <h2>Verification</h2><br>
+            <p> <?php $notVerified; ?> </p>
             <p>Enter <b>OTP code</b> sent to your number:</p><br>
             <input type="password" id="otp_code" placeholder="Enter OTP here" name="otp"><br>
             <p><?php echo $invalidOTP;?></p>
