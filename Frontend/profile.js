@@ -17,3 +17,12 @@ toggle.onclick = function(){
     }
 
 }
+
+
+
+function transitionMSG(){
+    var fade = document.getElementById("floatMSG");
+    fade.style.opacity = 0;
+}
+
+setTimeout(transitionMSG, 3000);
