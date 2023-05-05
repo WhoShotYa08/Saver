@@ -81,7 +81,7 @@
     <button name="signUp" id="signUp"><a >Sign-Up</a> </button>
     <!-- Login page link -->
     <div class="loginPage-link">
-        <p>Already have an account? <a href="LoginPage.html">Login here</a></p>
+        <p>Already have an account? <a href="LoginPage.php">Login here</a></p>
     </div>
     </form>
   </div>

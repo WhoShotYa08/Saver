@@ -32,7 +32,8 @@
         $rowCheck = mysqli_num_rows($runcheckUser);
 
         if($rowCheck>0){
-          $name = "You are a registered user, please login";
+          header("Location: LoginPage.php");
+          echo $name = "You are a registered user, please login";
         }
         else{
           if($passWord == $confirmPassword){

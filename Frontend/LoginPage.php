@@ -1,5 +1,6 @@
 <?php 
     include "loginfile.php";
+    include "forgotPassword.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,14 +58,14 @@
         <!-- Forgot password pop up -->
         <div id="forgotPopUp">
             <input type="button" id="cancelButton" value="X" onclick="popDown()">
-            <form action="" method="post">
+            <form action="forgotPassword.php" method="post">
                 <!-- Input Box (Email) -->
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
                     <input type="email" required placeholder="Email" name="forgotEmailInput">
                     <!-- <label>Email</label> -->
                 </div>
-                <button id="resetPassword">Reset password</button>
+                <button id="resetPassword" name="resetPassword">Reset password</button>
     
                 <!-- Login Button -->
                 <!-- <button>Send OTP</button> -->

@@ -62,13 +62,13 @@
                 <div class="floatingMSG" id="floatMSG"> <?php $updateSuccessful; ?> </div>
                 <div class="profile_info">
                     <label for="name">Name</label><br>
-                    <input type="text" placeholder="Daniel" value=" <?php echo $name;?>" class="proInput" name="fname"><br>
+                    <input type="text" placeholder="Daniel" value=" <?php echo $name;?>" class="proInput" name="fname" ><br>
                     <label for="surname">Surname</label><br>
-                    <input type="text" placeholder="Johnson" value=" <?php echo $surname;?>" class="proInput" name="lname"><br>
+                    <input type="text" placeholder="Johnson" value=" <?php echo $surname;?>" class="proInput" name="lname" ><br>
                     <label for="email">Email</label><br>
-                    <input type="email" placeholder="DanielJohnson@gmail.com" value=" <?php echo $emailCred;?>" class="proInput" name="userEmail"><br>
+                    <input type="email" placeholder="DanielJohnson@gmail.com" value=" <?php echo $emailCred;?>" class="proInput" name="userEmail" ><br>
                     <label for="cellnumber">Cellphone number</label><br>
-                    <input type="tel" placeholder="071 223 1111" value=" <?php echo '0'.$cellNum;?>" class="proInput"  name="userCellNumber"><br>
+                    <input type="tel" placeholder="071 223 1111" value=" <?php echo '0'.$cellNum;?>" class="proInput"  name="userCellNumber" ><br>
                     <label for="address">Adresss</label><br>
                     <input type="text" placeholder="12 bunting road, Johannesburg" class="proInput" ><br>
                     <button name="editButton" class="edit1" style="height: 40px; width:80px; background-color:orange; border-radius:10px; border:none; font-weight:bold">Update</button>

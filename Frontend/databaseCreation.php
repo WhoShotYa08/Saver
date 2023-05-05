@@ -55,6 +55,9 @@
         // else{
         //   echo "Error 404";
         // }
+
+        // $alterEmail = "ALTER TABLE signUp_details ADD CONSTRAINT uc_emailAddress UNIQUE (emailAddress)";
+        // mysqli_query($createConnection, $alterEmail);
         
     
     

@@ -1,14 +1,14 @@
 <?php 
     session_start();
     include "databaseCreation.php";
+    include "validateInput.php";
 
-
-    function validateUserInput($Input){
-        $Input = trim($Input);
-        $Input = stripslashes($Input);
-        $Input = htmlspecialchars($Input);
-        return $Input;
-    }
+    // function validateUserInput($Input){
+    //     $Input = trim($Input);
+    //     $Input = stripslashes($Input);
+    //     $Input = htmlspecialchars($Input);
+    //     return $Input;
+    // }
 
     echo $_SERVER["REQUEST_METHOD"];
 
