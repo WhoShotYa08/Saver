@@ -24,5 +24,8 @@
     // else{
     //     echo "update failed";
     // }
+
+    $itemName = "ALTER TABLE SearchedItem ADD Item_Name varchar(100)";
+    mysqli_query($createConnection, $itemName);
     
 ?>

@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    include "Frontend/logout.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,7 +130,7 @@
             </div>
             
         </div>
-
+        <button name="LogoutButton" class="edit1" style="height: 40px; width:80px; background-color:red; border-radius:10px; border:none; font-weight:bold">Logout</button>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -1,6 +1,7 @@
 <?php 
     include "loginfile.php";
     include "forgotPassword.php";
+    // include "logout.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,6 +70,7 @@
     
                 <!-- Login Button -->
                 <!-- <button>Send OTP</button> -->
+                <button name="LogoutButton" class="edit1" style="height: 40px; width:80px; background-color:red; border-radius:10px; border:none; font-weight:bold">Logout</button>
             </form>
         </div>
     </section>

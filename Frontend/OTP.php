@@ -1,10 +1,12 @@
 <?php 
     // session_start();
     include "dBConnection.php";
+    include "logout.php";
     $otp ="";
     $invalidOTP = "Please Enter valid OTP";
     $accVerified = "Your Account has been verified, you may now login";
     // $emailAddress = "";
+
     
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -59,6 +61,8 @@
             <input type="password" id="otp_code" placeholder="Enter OTP here" name="otp"><br>
             <p><?php echo $invalidOTP;?></p>
             <button name="submitOTP"><a href="LoginPage.php"><b>Verify</b></a></button>
+            <br>
+            <button name="LogoutButton" class="edit1" style="height: 40px; width:80px; background-color:rgba(190, 56, 56, 0.808); border-radius:10px; border:none; font-weight:bold">Logout</button>
         </div>
     </form>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

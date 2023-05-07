@@ -1,5 +1,6 @@
 <?php 
     include "editProfile.php";
+    include "logout.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,6 +74,7 @@
                     <input type="text" placeholder="12 bunting road, Johannesburg" class="proInput" ><br>
                     <button name="editButton" class="edit1" style="height: 40px; width:80px; background-color:orange; border-radius:10px; border:none; font-weight:bold">Update</button>
                     <button name="deleteButton" class="edit1" style="height: 40px; width:80px; background-color:rgba(184, 29, 29, 0.705); border-radius:10px; border:none; font-weight:bold; position:relative; left: 85%; bottom: 8%; ">Delete</button>
+                    <button name="LogoutButton" class="edit1" style="height: 40px; width:80px; background-color:red; border-radius:10px; border:none; font-weight:bold">Logout</button>
                     <br>
                     <br>
                 </div>
