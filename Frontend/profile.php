@@ -52,25 +52,56 @@
 
     <div class="border">
         <span>.</span>
-        <span class="profile_picture"><img src="https://th.bing.com/th/id/OIP.7bCUmrcoCLNF4utgNRm0-QAAAA?pid=ImgDet&rs=1" alt="profile picture icon" id="profile_picture" ><a href="#" id="edit_profile" name="editProfile" >Edit profile</a></span>
-        <span></span>
+    <div class="position_picture">
+            <img id="preview" src="https://png.pngtree.com/png-vector/20191103/ourmid/pngtree-handsome-young-guy-avatar-cartoon-style-png-image_1947775.jpg" alt="Preview of uploaded image" class="profile_picture">
+        </div>
+        <div class="position_picture choose_picture">
+            <input type="file" id="image" onchange="previewImage()">
+            <button type="button" onclick="toggleEditability()" class="edit_btn">Edit Profile</button>
     </div>
-    <br><br><br><br><br><br><br><br>
+    </div>
+
+    <br><br>
+    
+
+    <script>
+        function previewImage() {
+            var input = document.getElementById('image');
+            var preview = document.getElementById('preview');
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function toggleEditability() {
+            var inputs = document.querySelectorAll('.proInput');
+            inputs.forEach(function(input) {
+                input.readOnly = !input.readOnly;
+            });
+        }
+    </script>
+
+
+    <br><br><br>
 
     <form action="" method="post">
         <div class="container">
                 <div class="floatingMSG" id="floatMSG"> <?php $updateSuccessful; ?> </div>
                 <div class="profile_info">
                     <label for="name">Name</label><br>
-                    <input type="text" placeholder="Daniel" value=" <?php echo $name;?>" class="proInput" name="fname" ><br>
+                    <input type="text" placeholder="Daniel" value=" <?php echo $name;?>" class="proInput" name="fname" readonly ><br>
                     <label for="surname">Surname</label><br>
-                    <input type="text" placeholder="Johnson" value=" <?php echo $surname;?>" class="proInput" name="lname" ><br>
+                    <input type="text" placeholder="Johnson" value=" <?php echo $surname;?>" class="proInput" name="lname" readonly><br>
                     <label for="email">Email</label><br>
-                    <input type="email" placeholder="DanielJohnson@gmail.com" value=" <?php echo $emailCred;?>" class="proInput" name="userEmail" ><br>
+                    <input type="email" placeholder="DanielJohnson@gmail.com" value=" <?php echo $emailCred;?>" class="proInput" name="userEmail" readonly ><br>
                     <label for="cellnumber">Cellphone number</label><br>
-                    <input type="tel" placeholder="071 223 1111" value=" <?php echo '0'.$cellNum;?>" class="proInput"  name="userCellNumber" ><br>
+                    <input type="tel" placeholder="071 223 1111" value=" <?php echo '0'.$cellNum;?>" class="proInput"  name="userCellNumber" readonly ><br>
                     <label for="address">Adresss</label><br>
-                    <input type="text" placeholder="12 bunting road, Johannesburg" class="proInput" ><br>
+                    <input type="text" placeholder="12 bunting road, Johannesburg" class="proInput" readonly ><br>
                     <button name="editButton" class="edit1" style="height: 40px; width:80px; background-color:orange; border-radius:10px; border:none; font-weight:bold">Update</button>
                     <button name="deleteButton" class="edit1" style="height: 40px; width:80px; background-color:rgba(184, 29, 29, 0.705); border-radius:10px; border:none; font-weight:bold; position:relative; left: 85%; bottom: 8%; ">Delete</button>
                     <br>

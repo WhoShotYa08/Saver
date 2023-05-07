@@ -36,11 +36,28 @@
     height: 10em;
 }
 
-.profile_picture {
+img {
+    width: 15em;
+    height: 11em;
+    border-radius: 100%;
+}
+
+.edit_btn {
+    margin-left: 4em;
+    color: rgba(184, 29, 29, 0.705);
+    height: 3em;
+    width: 10em;
+    background-color:orange;
+    border-radius:10px;
+    border:none; 
+    font-weight:bold
+}
+
+.position_picture {
     display: flex;
     justify-content: center;
-
 }
+
 
 #profile_picture {
     border-radius: 10em;
