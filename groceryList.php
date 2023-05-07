@@ -121,7 +121,7 @@
 
             <div class="buttons">
                 <button id="send_to_me">Send to me</button>
-                <button id="location">View Nearby Location</button>
+                <button id="location" >View Nearby Location</button>
             </div>
             
         </div>
