@@ -6,13 +6,13 @@
         
         $createConnection = mysqli_connect($serverName, $userName, $passWord);
           
-        if($createConnection == false){
-          echo "Connection Failed"; 
-          die("Connection Failed".mysqli_connect_error());
-        }
-        else{
-          echo "Connection Successful";
-        }
+        // if($createConnection == false){
+        //   echo "Connection Failed"; 
+        //   die("Connection Failed".mysqli_connect_error());
+        // }
+        // else{
+        //   echo "Connection Successful";
+        // }
     
         echo "<br>";
         //creating table to database
@@ -61,6 +61,15 @@
         
     
     
-        
+        // $modifyPassword = "ALTER TABLE signUp_details MODIFY userPassword varchar(100)";
+        // mysqli_query($createConnection, $modifyPassword);
+
+        $createCommentsTable = "CREATE TABLE Comments(
+        CustomerID INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        CommentsText varchar(1000),
+        CONSTRAINT Foreign Key (CustomerID) references signUp_details (CustomerID)
+        );";
+
+        // mysqli_query($createConnection, $createCommentsTable);
     
 ?>

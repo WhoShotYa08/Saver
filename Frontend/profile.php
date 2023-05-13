@@ -1,6 +1,9 @@
 <?php 
     include "editProfile.php";
     include "logout.php";
+    // include "Saver/groceryList.php"
+    include "navBar.php";
+    include "sessionOver.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,10 +14,13 @@
     <title>Document</title>
     <script src="groceryList.js" defer></script>
     <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="NavigationBarStyles.css">
 </head>
 <body>
+
+    
     <header>
-        
+        <span> <a href="?urlRedirect=Saver/groceryList.php" class="navBarphp">Grocery Items</a> </span>
         <!-- Navigation bar with a class of "navigation" -->
         <nav class="navigation">
             <!-- Navigation bar content within a div with class "navBar" -->

@@ -1,6 +1,8 @@
 <?php 
     session_start();
     include "Frontend/logout.php";
+    include "Frontend/navBar.php";
+    include "Frontend/sessionOver.php";
 ?>
 
 <!DOCTYPE html>
@@ -12,10 +14,12 @@
     <title>Document</title>
     <script src="groceryList.js" defer></script>
     <link rel="stylesheet" href="groceryList.css">
+    <link rel="stylesheet" href="Frontend/NavigationBarStyles.css">
 </head>
 <body>
+    <span> <a href="?urlRedirect=Frontend/profile.php" class="navBarphp" >Profile</a> </span>
     <header>
-        
+    
         <!-- Navigation bar with a class of "navigation" -->
         <nav class="navigation">
             <!-- Navigation bar content within a div with class "navBar" -->

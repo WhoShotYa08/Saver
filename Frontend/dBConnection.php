@@ -2,12 +2,17 @@
   session_start();
 
 
-  include "databaseCreation.php";
+    include "databaseCreation.php";
+
     //Generating OTP then storing it in database
     $otpCode = rand(10000, 99999);
     $name =  $surname = $emailAddress = $cellphoneNum = $password = $confirmPassword = "";
+
+
     function sendData($otpCode, $createConnection, $emailAddress, $cellphoneNum, $passWord, $name, $surname, $confirmPassword){
       // $name =  $surname = $emailAddress = $cellphoneNum = $password = $confirmPassword = "";
+
+
   
       function clearInput($userInput){
         $userInput = trim($userInput);
@@ -34,10 +39,12 @@
         if($rowCheck>0){
           header("Location: LoginPage.php");
           echo $name = "You are a registered user, please login";
+          exit();
         }
         else{
           if($passWord == $confirmPassword){
-            $insertQuery = "INSERT INTO signUp_details (firstName, lastName, emailAddress, cellphoneNum, userPassword, otp) VALUES ('$name', '$surname', '$emailAddress', $cellphoneNum, '$passWord', $otpCode)";
+            $encyrptedPassword = password_hash($passWord , PASSWORD_DEFAULT);
+            $insertQuery = "INSERT INTO signUp_details (firstName, lastName, emailAddress, cellphoneNum, userPassword, otp) VALUES ('$name', '$surname', '$emailAddress', $cellphoneNum, '$encyrptedPassword', $otpCode)";
             include "sendEmail.php";
             if(mysqli_query($createConnection, $insertQuery) == true){
               echo "New record inserted successfully";

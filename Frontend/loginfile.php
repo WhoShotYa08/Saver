@@ -10,7 +10,7 @@
     //     return $Input;
     // }
 
-    echo $_SERVER["REQUEST_METHOD"];
+    // echo $_SERVER["REQUEST_METHOD"];
 
     echo "<br>";
     $loginEmail = $loginPassword = "";
@@ -39,15 +39,18 @@
             $email = $results["emailAddress"];
             $password = $results["userPassword"];
             $verified = $results["verified"];
+
+            // password_verify($loginPassword, $password);
     
             if($checkEmailAvailability>0){
-                if( $emailAddress == $email && $loginPassword == $password && $verified == true ){
+                if( $emailAddress == $email && password_verify($loginPassword, $password) && $verified == true ){
                     $_SESSION["loginEmail"] = $emailAddress;
                     $_SESSION["loginPassword"] = $loginPassword;
                     header("Location: profile.php");
+                    // header("Location:Saver/groceryList.php");
                     exit();
                 }
-                elseif($emailAddress == $email && $loginPassword == $password && $verified == false ){
+                elseif($emailAddress == $email && password_verify($loginPassword, $password) && $verified == false ){
                     header("Location: OTP.php");
                     $otpCode = rand(10000, 99999);
                     $updateOTP = "UPDATE signUp_details SET otp = '$otpCode' WHERE emailAddress = '$emailAddress'";
@@ -56,7 +59,7 @@
                     $notVerified;
                     exit();
                 }
-                elseif( ($emailAddress == $email && $loginPassword != $password && $verified == true) || ($emailAddress != $email && $loginPassword == $password && $verified == true ) ){
+                elseif( ($emailAddress == $email && password_verify($loginPassword, $password) && $verified == true) || ($emailAddress != $email && $loginPassword == $password && $verified == true ) ){
                     echo $incorrectDetails;
                     header("Location: LoginPage.php");
                     exit();

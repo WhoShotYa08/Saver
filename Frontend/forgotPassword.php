@@ -8,9 +8,6 @@
         forgotPassword($createConnection, $notRegUser, $emailAddress);
 
     }
-    else{
-        echo "Noooo";
-    }
     function forgotPassword($createConnection, $notRegUser, $emailAddress){
             $checkEmail = "SELECT emailAddress FROM signUp_details WHERE emailAddress='$emailAddress'";
             $runEmailQuery = mysqli_query($createConnection, $checkEmail);
