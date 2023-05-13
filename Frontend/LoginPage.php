@@ -22,7 +22,7 @@
     <section>
         <!-- Login Box -->
         <div class="login-box">     
-            <form action="loginfile.php" method="post" >
+            <form action="" method="post" >
                 <h2>Login</h2>
                 
 
