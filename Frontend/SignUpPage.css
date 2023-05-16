@@ -11,11 +11,11 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #E7DEDE;
+    background-image:linear-gradient(to bottom left,orange 50%,white 50%) ;
 } 
 
 /* Style the SVG element */
-svg {
+/* svg {
     position: relative;
     bottom: 5px;
     transform: scale(1.5);
@@ -23,7 +23,7 @@ svg {
     fill: orange; 
     rotate: 180deg;
     z-index: 2;
-  }
+  } */
 
 
 /* Style the logo */
@@ -64,21 +64,12 @@ svg {
 
 /* Style the signup box or container */
 .signup-box {
-    position: absolute;
-    box-sizing: border-box;
-    top: 11%;
-    width: 40%;
-    height: fit-content;
-    background-color: #fff;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: -2%;
-    margin-top: 5%;
-    z-index: 4;
-    padding: 15px 10px;
-}
+    position: relative;
+    background-color: whitesmoke;
+    padding: 3em 5em 3em 5em;
+    border-radius: .5em;
+    border: solid rgb(230, 230, 230);
+    }
 
 /* Style the heading of the signup form */
 h2 {

@@ -12,12 +12,13 @@
     <title>Login</title>
     <script src="login.js" defer></script>
     <link rel="stylesheet" href="LoginPage.css">
+    <script src="https://kit.fontawesome.com/6e07084945.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Background Shape -->
-    <svg class="BackgroundShape" height="640" width="1280">
+    <!-- <svg class="BackgroundShape" height="640" width="1280">
         <polygon id="SideTriangle" points="0, 0 1300, 645 0, 645"/>
-    </svg>
+    </svg> -->
 
     <section>
         <!-- Login Box -->
@@ -53,6 +54,11 @@
                 <!-- Register Link -->
                 <div class="register-link">
                     <p>Don't have an account? <a href="SignUpPage.php">Register here</a></p>
+                </div>
+                <p>Or</p><br>
+                <div class="login-with">
+                    <button class="google-btn"><i class="fa-brands fa-google" id="google-icon" style="color: #000000;"></i>Login with google</button><br><br>
+                    <button class="facebook-btn"><i class="fa-brands fa-facebook-f" id="facebook-icon" style="color: #000000;"></i>Login with facebook</button>
                 </div>
             </form>
         </div>

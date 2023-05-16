@@ -9,10 +9,15 @@
     <script src="password.js" defer></script>
   </head>
   <body>
-    <!-- SVG element to create a background shape -->
-    <svg class="BackgroundShape" height="640" width="1280">
-      <polygon id="SideTriangle" points="0, 0 1300, 645 0, 645"/>
-  </svg>
+  <style>
+    .signup-box {
+    position: relative;
+    background-color: whitesmoke;
+    padding: 3em 5em 3em 5em;
+    border-radius: .5em;
+    border: solid rgb(230, 230, 230);
+    }
+  </style>
   <!-- Sign-up form -->
   <div class="signup-box">     
     <form action="dBConnection.php" method="POST" >
