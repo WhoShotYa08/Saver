@@ -1,0 +1,85 @@
+.result-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid grey; 
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .result-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  
+  form{
+      width: 50%;
+      height:10%;
+      position: absolute;
+      left: 30%;
+      z-index: 2;
+  }
+  #input-field{
+      width: 80%;
+      height: 50%;
+      fill: lightgray;
+      border-radius: 20px;
+      background-color: lightgray;
+      border: 2px solid lightgray;
+      font-size: 15px;
+  }
+  .FixedSideBar {
+      border: 3px solid #ccc;
+      padding: 10px;
+      width: 250px;
+      position: absolute;
+      top: 10%;
+      border-radius: 20px;
+    }
+    
+    .FixedSideBar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .FixedSideBar li {
+      margin-bottom: 5px;
+    }
+    
+    .FixedSideBar a {
+      text-decoration: none;
+      color: #333;
+    }
+    
+    
+    .FixedSideBar .plus-sign {
+      font-weight: bold;
+      margin-left: 5px;
+    }
+    .ProductBox {
+      border: 1px solid black;
+      margin: 10px;
+    }
+    .ProductContainer {
+      display: flex;
+      flex-wrap: wrap;
+      width: 1000px;
+      position: absolute;
+      left: 20%;
+      top: 20%;
+    }
+    
+    .ProductBox {
+      flex-basis: 20%; /* Each item occupies 25% of the container's width */
+      /* Styles for each item */
+    }
+    #heading{
+      position: absolute;
+      top: 8%;
+      left: 20%;
+  
+    }
+    
