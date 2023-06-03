@@ -54,28 +54,6 @@ locationButton.addEventListener("click",()=>{
         : "Error: Your browser doesn't support geolocation."
     );
 
-    function nearestRoute(current){
-        var request = {
-          origin: current,
-          destination: "groceries",
-          travelMode: google.maps.TravelMode.DRIVING,
-          unitSystem: google.maps.UnitSystem.IMPERIAL 
-        }
-    }
-
-    directionsService.route(request, function (result, status) {
-      if (status == google.maps.DirectionsStatus.OK) {
-
-          //display route
-          directionsDisplay.setDirections(result);
-      } else {
-          //delete route from map
-          directionsDisplay.setDirections({ routes: [] });
-          //center map in London
-          map.setCenter(myLatLng);
-      }
-  });
-
     infoWindow.open(map);
   }
 
