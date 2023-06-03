@@ -1,6 +1,7 @@
 <?php 
     include "loginfile.php";
     include "forgotPassword.php";
+    // include "facebookLogin.php";
     // include "logout.php";
 ?>
 <!DOCTYPE html>
@@ -56,9 +57,11 @@
                     <p>Don't have an account? <a href="SignUpPage.php">Register here</a></p>
                 </div>
                 <p>Or</p><br>
+            </form>
+            <form >
                 <div class="login-with">
-                    <button class="google-btn"><i class="fa-brands fa-google" id="google-icon" style="color: #000000;"></i>Login with google</button><br><br>
-                    <button class="facebook-btn"><i class="fa-brands fa-facebook-f" id="facebook-icon" style="color: #000000;"></i>Login with facebook</button>
+                        <button class="google-btn"><i class="fa-brands fa-google" id="google-icon" style="color: #000000;"></i>Login with google</button><br><br>
+                        <button class="facebook-btn" onclick="logIn"><i class="fa-brands fa-facebook-f" id="facebook-icon" style="color: #000000;"></i>Login with facebook</button>
                 </div>
             </form>
         </div>
@@ -81,7 +84,24 @@
         </div>
     </section>
     </div>
+    <script>
+            function logIn(){
+                FB.login(function (response){
+                    console.log(response);
+                })
+            }
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId            : '639342924737059',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v17.0'
+            });
+        };
 
+
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
     
     <!-- Ionicons -->
