@@ -6,33 +6,12 @@
     padding: 0;
 }
 
-body {
-    display: flex;
-}
 
-/* Positions and styles an SVG element */
-svg {
-  position: absolute;
-  right: 0%;
-  transform: translateX();
-  z-index: 2;
-  fill: orange; 
-  rotate: 180deg;
-  z-index: 2;
-}
-
-/* Positions a section element */
-section{
-    position: relative;
-    z-index: 3;
-}
-
-/* Styles an h1 element */
-h1 {
-    position: relative;
-    color: black;
-    text-align: center;
-    top:70px;
+.container {
+    background-color: whitesmoke;
+    padding: 3em 4em 3em 4em;
+    border-radius: .3em;
+    border: solid rgb(230, 230, 230);
 }
 
 /* Styles a header element */
@@ -85,12 +64,6 @@ header {
     transform: scaleX(1);
 }
 
-/* Positions and styles a p element */
-p{
-    position: relative;
-    top:80px;
-    padding: 20px;
-}
 
 section {
     display: flex;

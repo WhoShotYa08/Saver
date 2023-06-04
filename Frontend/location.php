@@ -14,14 +14,15 @@
       <div id="advert">
         <h1>Advertisments</h1>
         <div class="main-advert">
-          <iframe width="480" height="310" src="https://www.youtube.com/embed/8zq0VbgU5aA?autoplay=1&mute=1" frameborder="3"></iframe>
+          <iframe width="390" height="310" src="https://www.youtube.com/embed/8zq0VbgU5aA?autoplay=1&mute=1" frameborder="3"></iframe>
           </div>
 
 
           <div class="other-adverts">
-            <iframe width="235" height="150" src="https://www.youtube.com/embed/c8d2lfUbG7I?autoplay=1&mute=1&loop=1" frameborder="0"></iframe>
-            <iframe width="235" height="150" src="https://www.youtube.com/embed/Lv8ekWAK_1Q?autoplay=1&mute=1&loop=1"frameborder="0"></iframe>
+            <iframe width="175" height="150" src="https://www.youtube.com/embed/c8d2lfUbG7I?autoplay=1&mute=1&loop=1" frameborder="0"></iframe>
+            <iframe width="175" height="150" src="https://www.youtube.com/embed/Lv8ekWAK_1Q?autoplay=1&mute=1&loop=1"frameborder="0"></iframe>
           </div>
+          <div> <iframe width="175" height="150" src="https://www.youtube.com/embed/Lv8ekWAK_1Q?autoplay=1&mute=1&loop=1"frameborder="0"></iframe></div>
           
       </div>
 
