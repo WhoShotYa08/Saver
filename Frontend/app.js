@@ -7,7 +7,7 @@ async function initMap(){
     display = new google.maps.DirectionsRenderer();
 
     map = new Map(document.getElementById("map"), {
-    center: { lat: -28.479, lng: 24.672 },
+    center: { lat: -26.2041, lng: 28.0473 },
     zoom: 15, 
     mapTypeId: google.maps.MapTypeId.ROADMAP,
   });
