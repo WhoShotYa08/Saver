@@ -76,7 +76,7 @@ def shoprite_scraper(data, website):
 
         except:
             continue
-        file.writerow([item_name, before_price, smart_price, "https://www.shoprite.co.za/"+picture])
+        file.writerow([item_name, before_price, smart_price, "https://www.shoprite.co.za"+picture])
 
 
 def woolies_scraper(data, website):
