@@ -80,7 +80,7 @@ def shoprite_scraper(data, website):
 
         except:
             continue
-        file.writerow([item_name, before_price, smart_price, picture])
+        file.writerow([item_name, before_price, smart_price, "https://www.shoprite.co.za/"+picture])
 
 
 
@@ -92,7 +92,8 @@ def woolies_scraper(data, website):
     file.writerow(['Name', 'Price', "Discount", "image Link"])
     for item in container:
         try:
-            pass
+            item_name = item.find("a", class_="range--title").text
+            current_price = item.find("")
         except:
             continue
         # file.writerow([item_name, current_price, smart_price, picture])

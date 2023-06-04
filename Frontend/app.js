@@ -1,12 +1,14 @@
-let map, directionsService, display;
+var map, directionsService, display;
 var location = {}
 async function initMap(){
     //@ts-ignore
     const { Map } = await google.maps.importLibrary("maps");
-   
+    directionsService = new google.maps.DirectionsService();
+    display = new google.maps.DirectionsRenderer();
+
     map = new Map(document.getElementById("map"), {
-    center: { lat: -28.479, lng: 24.672 },
-    zoom: 7, 
+    center: { lat: -26.2041, lng: 28.0473 },
+    zoom: 15, 
     mapTypeId: google.maps.MapTypeId.ROADMAP,
   });
 let infoWindow = new google.maps.InfoWindow();
@@ -24,9 +26,12 @@ locationButton.addEventListener("click",()=>{
                   lng: position.coords.longitude,
                 };
 
-                infoWindow.setPosition(pos);
-                infoWindow.setContent("You are here.");
-                infoWindow.open(map);
+                new google.maps.Marker({
+                  position: pos,
+                  map,
+                  title: "You are here."
+                })
+                display.setMap(map);
                 map.setCenter(pos);
               },
               () => {
@@ -34,7 +39,7 @@ locationButton.addEventListener("click",()=>{
               }
             );
           } else {
-            // Browser doesn't support Geolocation
+            // If browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
           }
         });
@@ -48,6 +53,7 @@ locationButton.addEventListener("click",()=>{
         ? "Error: The Geolocation service failed."
         : "Error: Your browser doesn't support geolocation."
     );
+
     infoWindow.open(map);
   }
 

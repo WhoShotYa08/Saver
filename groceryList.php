@@ -18,6 +18,7 @@
 </head>
 <body>
     <span> <a href="?urlRedirect=Frontend/profile.php" class="navBarphp" >Profile</a> </span>
+    
     <header>
     
         <!-- Navigation bar with a class of "navigation" -->

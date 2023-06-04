@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+body {
+    display: flex;
+}
+
 /* Positions and styles an SVG element */
 svg {
   position: absolute;
@@ -86,4 +90,9 @@ p{
     position: relative;
     top:80px;
     padding: 20px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
 }
