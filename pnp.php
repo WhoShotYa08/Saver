@@ -11,8 +11,9 @@
 
 <form method="get">
     <input type="text" id="input-field" name="search" placeholder="   Search   In   Specials4You">
-    <div id="output"></div>
+    <div id="output" class="result-container"></div>
 </form>
+
 
 
 <h1 style="color: #FFA033;font-size: 50px;" id="heading">Pick n' Pay</h1>
@@ -68,8 +69,13 @@
 <script>
 //Sidebar
 function toggleDropdown(element) {
-    element.classList.toggle('show'); // Toggle the 'show' class on the clicked element
+    element.classList.toggle('show');
   }
+
+
+
+
+
 
 // Opening and Storing in Object
 // Pnp
@@ -98,8 +104,8 @@ for (let i = 1; i < rows.length; i++) {
   }
 }
 
-// SearchBox
-// SearchBox
+
+
 // SearchBox
 const inputBox = document.getElementById("input-field"); // textbox
 const output = document.getElementById("output"); //
