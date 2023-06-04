@@ -1,0 +1,197 @@
+/* Apply font, margin, box-sizing and padding to all elements */
+* {
+    margin: 0;
+    box-sizing: 0;
+    padding: 0;
+}
+
+
+/* Style the body element */
+body {
+    position: relative;
+    z-index: 3;
+    background-color: #E7DEDE;
+    width: 100%;
+    background-image:linear-gradient(to bottom left,orange 50%,white 50%) ;
+} 
+
+/* Style the header element */
+header nav ul li {
+    list-style: none;
+    padding-left: 2em;
+    font-weight: bold;
+    font-size: 1.2em
+}
+header nav ul li a {
+    text-decoration: none;
+    color: black;
+
+}
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+header nav ul{
+    display: flex;
+}
+
+.navbar {
+    position: relative;
+    margin-top: -1.8em;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section2 {
+    display: flex;
+    justify-content: right;
+    margin-top: -30em;
+}
+.login-box {
+    display: flex;
+
+    background-color: whitesmoke;
+    padding: 3em 4em 3em 4em;
+    border-radius: .3em;
+    border: solid rgb(230, 230, 230);
+    width: 30em;
+}
+
+.login-box .box {
+    
+  display: flex;
+  flex-direction: row;
+}
+
+.login-box .input-container {
+    display: flex;
+    margin-bottom: 1em;
+    outline: none;
+    border: none;
+
+}
+.login-box .input-container input:active {
+    border: none;
+    border-color: orange;
+    outline: orange;
+
+}
+
+
+
+.login-box .input-container input {
+  width: 100%;
+  height: 2em;
+  padding: 0.5em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+#comment {
+  width: 100%;
+  height: 7em;
+  text-align: center;
+}
+
+.login-box .p-container {   
+  padding-left: 2em;
+
+  margin-right: 1em;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.login-box h2 {
+  font-size: 2em;
+  text-align: center;
+}
+
+button {
+    width: 5em;
+    padding: 0.3em;
+    outline: none;
+}
+
+button:hover {
+    border-radius: 5px;
+    background-color: orange;
+    border-color: orange;
+    color: white;
+}
+
+/* ------------hamburger toggle button*----------------/
+
+    /* Style the hamburger toggle button */
+    .toggle {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1;
+        cursor: pointer;
+    }
+    
+    /* Style the three lines in the hamburger toggle button */
+    .toggle .line {
+        width: 30px;
+        height: 4px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: transform 0.3s;
+    }
+    
+    /* Rotate the first line when the menu is open */
+    .toggle.open .line:first-of-type {
+        transform: rotate(-45deg) translate(-8px, 5px);
+    }
+    
+    /* Hide the middle line when the menu is open */
+    .toggle.open .line:nth-of-type(2) {
+        opacity: 0;
+    }
+    
+    /* Rotate the last line when the menu is open */
+    .toggle.open .line:last-of-type {
+        transform: rotate(45deg) translate(-8px, -5px);
+    }
+    
+    /* Style the menu */
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 30%;
+        height: 70%;
+        background-color: #eee;
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: orange;
+        border-radius: .4em;
+    }
+    
+    /* Show the menu when the toggle button is clicked */
+    .toggle.open + .menu {
+        transform: translateX(0);
+    }
+    
+    /* Style the links in the menu */
+    .menu a {
+        font-size: 24px;
+        text-decoration: none;
+        color: #333;
+        margin: 20px 0;
+    }
+
+    /* Style the links in the menu when the hamburger toggle is open */
+    .toggle.open + .menu a:hover {
+        background-color: orangered;
+        text-decoration: underline;
+        color: #eee;
+    }
