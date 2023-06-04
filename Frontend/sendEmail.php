@@ -2,6 +2,7 @@
     // include "dBConnection.php";
     // include "vendor/autoload.php";
     require_once('vendor/autoload.php');
+    echo "";
 
     use PHPMailer\PHPMailer\PHPMailer;
     function sendMail($otpCode, $emailAddress){
