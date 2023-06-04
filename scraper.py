@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 websites = ['https://www.pnp.co.za/pnpstorefront/pnp/en/specials-landing',
             'https://www.shoprite.co.za/specials?q=%3AspecialsRelevance%3AbrowseAllStoresFacet%3AbrowseAllStoresFacet%3AbrowseAllStoresFacetOff%3AbrowseAllStoresFacetOff&page=1',
-            'https://www.woolworths.co.za/cat/Food/Fruit-Vegetables-Salads/_/N-lllnam?No=60&Nrpp=60']
+            'https://www.woolworths.co.za/cat/Food/Beverages-Juices/_/N-mnxddc']
 
 
 
@@ -39,7 +39,7 @@ def website_resource(website):
 
 
 def beautiful_data(site):
-    html_text = BeautifulSoup(website_resource(site).text, 'lxml')
+    html_text = BeautifulSoup(website_resource(site).text, 'html.parser')
     return html_text
 
 
@@ -86,17 +86,22 @@ def shoprite_scraper(data, website):
 
 
 def woolies_scraper(data, website):
-    container = data.find_all("div", class_="item js-product-card-item product-card-grid")
+    container = data.find_all("div", class_="product-list__item")
     file = store_data(website.split(".")[1])
 
-    file.writerow(['Name', 'Price', "Discount", "image Link"])
+    file.writerow(['Name', 'Price', "Discount"])
     for item in container:
+
         try:
             item_name = item.find("a", class_="range--title").text
-            current_price = item.find("")
+            current_price = item.find("span", class_="font-graphic").strong.text
+            smart_price = item.find("div", class_="product__special").text
+            #image links aren't being accessed
+            # picture = item.find("img", class_="product-card__img lazyloaded")['src']
         except:
             continue
-        # file.writerow([item_name, current_price, smart_price, picture])
+        
+        file.writerow([item_name, current_price, smart_price])
 
 def main():
     """
