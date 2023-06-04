@@ -9,9 +9,10 @@
 </head>
 <body>
 
-<form method="get">
-    <input type="text" id="input-field" name="search" placeholder="   Search   In   Specials4You">
-    <div id="output"></div>
+<form method="get" action="item-details-shoprite.php">
+  <input type="text" id="input-field" name="search" placeholder="Search In Specials4You">
+  <div id="output" class="result-container"></div>
+  <input type="hidden" id="result-data" name="resultData">
 </form>
 
 <h1 style="color: #FFA033;font-size: 50px;" id="heading">Shoprite</h1>
@@ -89,10 +90,13 @@ for (let i = 1; i < rows.length; i++) {
 }
 
 // SearchBox
-const inputBox = document.getElementById("input-field"); // textbox
-const output = document.getElementById("output"); //
+const inputBox = document.getElementById("input-field");
+const output = document.getElementById("output");
+const resultDataInput = document.getElementById("result-data"); 
 
 let userInput = "";
+let Result = []; 
+
 inputBox.addEventListener("input", () => {
   userInput = inputBox.value.toLowerCase();
   let filteredData = data;
@@ -101,24 +105,49 @@ inputBox.addEventListener("input", () => {
       item => item.Name && item.Name.toLowerCase().includes(userInput)
     );
   }
+
   if (userInput.trim() === "") {
-    output.innerHTML = ""; // Clear the output if there is no input
+    output.innerHTML = "";
   } else {
-    const outputHTML = filteredData.map(item => {
-      const name = item.Name;
-      const imageSrc = item[Object.keys(item)[Object.keys(item).length - 1]];
-      const thirdColumn = item[Object.keys(item)[2]]; // Assuming the third column index is 2 (0-based index)
+    const outputHTML = filteredData.map((item, index) => {
+      let name = item.Name;
+      let imageSrc = item[Object.keys(item)[Object.keys(item).length - 1]];
+      let thirdColumn = item[Object.keys(item)[2]];
+      let SecondColumn = item[Object.keys(item)[1]];
       return `
         <div class="result-item">
-          <img src="${imageSrc}" alt="Image" />
-          <p>${name}</p>
-          <p>${thirdColumn}</p>
+          <a href="item-details-shoprite.php" class="result-link" data-index="${index}">
+            <img src="${imageSrc}" alt="Image" name="img"></img>
+            <p name="name">${name}</p>
+            <p name="discountprice">${thirdColumn}</p>
+            <p name="originalprice">${SecondColumn}</p>
+          </a>
         </div>
       `;
     }).join("");
     output.innerHTML = outputHTML;
+    const resultLinks = document.querySelectorAll('.result-link');
+    resultLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault(); 
+        const resultIndex = link.getAttribute('data-index');
+        let clickedResult = filteredData[resultIndex];
+        let resultItem = {
+          imageSrc: clickedResult[Object.keys(clickedResult)[Object.keys(clickedResult).length - 1]],
+          name: clickedResult.Name,
+          thirdColumn: clickedResult[Object.keys(clickedResult)[2]],
+          SecondColumn: clickedResult[Object.keys(clickedResult)[1]]
+        };
+
+        Result.push(resultItem); 
+        resultDataInput.value = JSON.stringify(Result);
+        document.querySelector('form').submit();
+      });
+    });
   }
 });
+
+
 
 
 

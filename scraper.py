@@ -43,6 +43,8 @@ def beautiful_data(site):
     return html_text
 
 
+
+
 def pnp_scrapper(data, website):
     container = data.find_all("div", class_="item js-product-card-item product-card-grid")
     file = store_data(website.split(".")[1])
@@ -61,6 +63,8 @@ def pnp_scrapper(data, website):
 
         file.writerow([item_name, current_price, smart_price, picture])
 
+
+
 def shoprite_scraper(data, website):
     container = data.find_all("figure", class_="item-product__content")
     file = store_data(website.split(".")[1])
@@ -77,6 +81,8 @@ def shoprite_scraper(data, website):
         except:
             continue
         file.writerow([item_name, before_price, smart_price, "https://www.shoprite.co.za"+picture])
+
+
 
 
 def woolies_scraper(data, website):
