@@ -16,8 +16,8 @@
 </form>
 
 <a href="ProductBoxesDetails.php">
-<div class="Cart" style="position:absolute; top:10%; right:10%;">
-  <p>🛒</p>
+<div class="Cart">
+  <p>GROCERY LIST</p>
 </div>
 </a>
 
@@ -199,10 +199,16 @@ data.forEach(item => {
   const firstColumnValue = item[firstColumnName];
 
   const firstColumnElement = document.createElement("p");
-  firstColumnElement.textContent = firstColumnValue + "    " + "+";
+  firstColumnElement.textContent = firstColumnValue;
+
+  const plus =document.createElement("p");
+  plus.textContent = "+";
+  plus.style.fontWeight = "bold";
+  plus.style.fontSize = "20px";
 
 
   box.appendChild(firstColumnElement);
+  box.appendChild(plus);
 
   box.addEventListener("click", () => {
     Results.push(item);

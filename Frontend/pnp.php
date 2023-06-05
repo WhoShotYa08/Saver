@@ -17,8 +17,8 @@
 
 
 <a href="ProductBoxesDetails.php">
-<div class="Cart" style="position:absolute; top:10%; right:10%;">
-  <p>🛒</p>
+<div class="Cart">
+  <p>GROCERY LIST</p>
 </div>
 </a>
 
@@ -177,7 +177,7 @@ data.forEach(item => {
   const box = document.createElement("div");
   box.classList.add("ProductBox");
   box.style.width = "150px";
-  box.style.height = "260px";
+  box.style.height = "280px";
   box.style.border = "2px solid white";
   box.style.borderRadius = "20px";
   box.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
@@ -206,10 +206,16 @@ data.forEach(item => {
   const firstColumnValue = item[firstColumnName];
 
   const firstColumnElement = document.createElement("p");
-  firstColumnElement.textContent = firstColumnValue + "    " + "+";
+  firstColumnElement.textContent = firstColumnValue;
+
+  const plus =document.createElement("p");
+  plus.textContent = "+";
+  plus.style.fontWeight = "bold";
+  plus.style.fontSize = "20px";
 
 
   box.appendChild(firstColumnElement);
+  box.appendChild(plus);
 
   box.addEventListener("click", () => {
     Results.push(item);

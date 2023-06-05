@@ -87,3 +87,11 @@
         overflow-y: auto; /* Enable vertical scrolling when the content exceeds the container height */
       }
       
+      .Cart{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-left: 10%;
+        position: absolute;
+        right: 10%;
+      }
