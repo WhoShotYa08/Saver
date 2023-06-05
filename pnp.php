@@ -9,13 +9,17 @@
 </head>
 <body>
 
-<form method="get" action="item-details-pnp.php">
+<form method="get" action="SearchBarDetails.php">
   <input type="text" id="input-field" name="search" placeholder="Search In Specials4You">
   <div id="output" class="result-container"></div>
   <input type="hidden" id="result-data" name="resultData">
 </form>
 
-
+<a href="ProductBoxesDetails.php">
+<div class="Cart" style="position:absolute; top:10%; right:10%;">
+  <p>O</p>
+</div>
+</a>
 
 <h1 style="color: #FFA033;font-size: 50px;" id="heading">Pick n' Pay</h1>
 <div class="FixedSideBar">
@@ -135,7 +139,7 @@ inputBox.addEventListener("input", () => {
       let SecondColumn = item[Object.keys(item)[1]];
       return `
         <div class="result-item">
-          <a href="item-details-pnp.php" class="result-link" data-index="${index}">
+          <a href="SearchBarDetails.php" class="result-link" data-index="${index}">
             <img src="${imageSrc}" alt="Image" name="img"></img>
             <p name="name">${name}</p>
             <p name="discountprice">${thirdColumn}</p>
@@ -170,29 +174,27 @@ inputBox.addEventListener("input", () => {
 
 
 
-
-
-
-
-
 // ProductBoxes
+// Create an empty array to store the clicked product details
+const Results = [];
+
 const container = document.querySelector(".ProductContainer");
 data.forEach(item => {
-    const box = document.createElement("div");
-    box.classList.add("ProductBox");
-    box.style.width = "150px";
-    box.style.height = "260px";
-    box.style.border = "2px solid white"; // Add white border with 2px thickness
-    box.style.borderRadius = "20px"; // Add border radius of 20px
-    box.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)"; // Add box shadow
-    box.style.paddingLeft = "10px";
+  const box = document.createElement("div");
+  box.classList.add("ProductBox");
+  box.style.width = "150px";
+  box.style.height = "260px";
+  box.style.border = "2px solid white";
+  box.style.borderRadius = "20px";
+  box.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
+  box.style.paddingLeft = "10px";
 
   const imgElement = document.createElement("img");
   const lastColumnName = headers[headers.length - 1];
   const lastColumnValue = item[lastColumnName];
   imgElement.src = lastColumnValue;
-  imgElement.style.width = "150px"; // Set desired width
-  imgElement.style.height = "150px"; // Set desired height
+  imgElement.style.width = "150px";
+  imgElement.style.height = "150px";
 
   box.appendChild(imgElement);
 
@@ -203,7 +205,6 @@ data.forEach(item => {
     const columnElement = document.createElement("p");
     columnElement.textContent = columnValue;
 
-
     box.appendChild(columnElement);
   }
 
@@ -211,19 +212,21 @@ data.forEach(item => {
   const firstColumnValue = item[firstColumnName];
 
   const firstColumnElement = document.createElement("p");
-  firstColumnElement.textContent = firstColumnValue;
+  firstColumnElement.textContent = firstColumnValue + "    " + "+";
 
-  
-  const PlusForAdd =document.createElement("a");
-  PlusForAdd.textContent = "+";
 
   box.appendChild(firstColumnElement);
-  box.appendChild(PlusForAdd);
 
-
+  box.addEventListener("click", () => {
+    Results.push(item);
+    localStorage.setItem("Results", JSON.stringify(Results));
+    alert("Product added succesfully");
+  });
 
   container.appendChild(box);
 });
+
+localStorage.setItem("Results", JSON.stringify(Results));
 
 
 </script>
