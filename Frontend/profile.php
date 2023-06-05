@@ -12,15 +12,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="groceryList.js" defer></script>
-    <link rel="stylesheet" href="profile.css">
+    <script src="profile.js" defer></script>
     <link rel="stylesheet" href="NavigationBarStyles.css">
+    <link rel="stylesheet" href="profile.css">
 </head>
 <body>
 
     
     <header>
-        <span> <a href="?urlRedirect=Saver/groceryList.php" class="navBarphp">Grocery Items</a> </span>
         <!-- Navigation bar with a class of "navigation" -->
         <nav class="navigation">
             <!-- Navigation bar content within a div with class "navBar" -->
@@ -33,20 +32,22 @@
                         <div class="line"></div>
                         <div class="line"></div>
                     </div>
-    
+                    
                     <!-- The menu that will be displayed -->
                     <div class="menu">
                         <a href="">Home</a>
-                        <a href="#">About</a>
-                        <a href="#">Contact</a>
+                        <a href="./services.php">Services</a>
+                        <a href="./contact.php">Contact</a>
                     </div>
     
                     <!-- logo icon -->
                     <li><a href="#" class="icons" id="logo"><ion-icon name="logo-html5"></ion-icon></ion-icon></a></li>
+
+                    <span> <a href="?urlRedirect=Saver/groceryList.php" class="navBarphp">Grocery Items</a> </span>
     
                     <div class="profile_cart">
                         <a href="#" class="icons" id="profile_icon"><ion-icon name="person-circle-outline"></ion-icon></a>
-    
+                        
                         <!-- shopping cart icon -->
                         <a href="#" class="icons" id="cart_icon"><ion-icon name="cart-outline"></ion-icon></a>
                     </div>
@@ -107,8 +108,6 @@
                     <input type="email" placeholder="DanielJohnson@gmail.com" value=" <?php echo $emailCred;?>" class="proInput" name="userEmail" readonly ><br>
                     <label for="cellnumber">Cellphone number</label><br>
                     <input type="tel" placeholder="071 223 1111" value=" <?php echo '0'.$cellNum;?>" class="proInput"  name="userCellNumber" readonly ><br>
-                    <label for="address">Adresss</label><br>
-                    <input type="text" placeholder="12 bunting road, Johannesburg" class="proInput" readonly ><br>
                     <button name="editButton" class="edit1" style="height: 40px; width:80px; background-color:orange; border-radius:10px; border:none; font-weight:bold">Update</button>
                     <button name="deleteButton" class="edit1" style="height: 40px; width:80px; background-color:rgba(184, 29, 29, 0.705); border-radius:10px; border:none; font-weight:bold; position:relative; left: 85%; bottom: 8%; ">Delete</button>
                     <button name="LogoutButton" class="edit1" style="height: 40px; width:80px; background-color:red; border-radius:10px; border:none; font-weight:bold">Logout</button>

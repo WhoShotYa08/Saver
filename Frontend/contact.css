@@ -8,37 +8,54 @@
 
 /* Style the body element */
 body {
-    position: relative;
-    z-index: 3;
+    
     background-color: #E7DEDE;
     width: 100%;
     background-image:linear-gradient(to bottom left,orange 50%,white 50%) ;
 } 
 
-/* Style the header element */
-header nav ul li {
-    list-style: none;
-    padding-left: 2em;
-    font-weight: bold;
-    font-size: 1.2em
-}
-header nav ul li a {
+nav ul li a {
     text-decoration: none;
+    font-size: 1.5em;
+    padding-left: 2em;
     color: black;
+    font-weight: bold;
 
 }
-header nav ul li a:hover {
+nav ul li a:hover {
     text-decoration: underline;
+    color: orange;
 }
 
-header nav ul{
+nav ul {
+    margin-top: -2em;
+    list-style: none;
     display: flex;
+    padding-right: 5em;
 }
 
-.navbar {
+.icons {
+    color: orange;
+    font-size: 3.5em;
+    padding-left: .2em;
     position: relative;
-    margin-top: -1.8em;
+    bottom: .2em;
 }
+
+#profile_icon, #cart_icon{
+    color: white;
+
+}
+
+.profile_cart {
+    font-size: .7em;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -6.5em;
+    padding: 10px;
+    
+}
+
 
 section {
     display: flex;
@@ -69,14 +86,13 @@ section {
 .login-box .input-container {
     display: flex;
     margin-bottom: 1em;
-    outline: none;
-    border: none;
-
-}
-.login-box .input-container input:active {
-    border: none;
-    border-color: orange;
     outline: orange;
+    
+    
+}
+.login-box .input-container input:hover {
+    border-color: 1px solid orange;
+    outline: none;
 
 }
 

@@ -43,18 +43,30 @@
         </nav>
     </header> -->
 
-    <div class="navbar">
     <header>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="./contact.php">Contact</a></li>
-        </ul>
-    </nav>
+        <div class="navbar">
+    
+            <nav>
+                <ul>
+                    <li><a href="#" class="icons" id="logo"><ion-icon name="logo-html5"></ion-icon></ion-icon></a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="./contact.php">Contact</a></li>
+
+                </ul>
+                <div class="profile_cart">
+                        <a href="./profile.php" class="icons" id="profile_icon"><ion-icon name="person-circle-outline"></ion-icon></a>
+                        
+                        <!-- shopping cart icon -->
+                        <a href="#" class="icons" id="cart_icon"><ion-icon name="cart-outline"></ion-icon></a>
+                </div>
+            </nav>
+            
+        </div>
     </header>
-    </div>
+
+
 
     <br><br><br><br>
     <section class="section">
@@ -104,6 +116,7 @@
         </div>
       </section>
     
-
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
