@@ -82,4 +82,8 @@
       left: 20%;
   
     }
-    
+    .result-container {
+        max-height: 300px; /* Set the maximum height for the result container */
+        overflow-y: auto; /* Enable vertical scrolling when the content exceeds the container height */
+      }
+      
