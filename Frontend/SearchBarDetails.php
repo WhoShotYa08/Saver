@@ -29,8 +29,8 @@ $resultArray = json_decode($resultData, true);
 foreach ($resultArray as $result) {
     echo "<img src='" . $result['imageSrc'] . "'><br>";
     echo "Name: " . $result['name'] . "<br>";
-    echo "Third Column: " . $result['thirdColumn'] . "<br>";
-    echo "Second Column: " . $result['SecondColumn'] . "<br>";
+    echo "Discount Price: " . $result['thirdColumn'] . "<br>";
+    echo "Original Price: " . $result['SecondColumn'] . "<br>";
     echo "<br>";
   }
 ?>
