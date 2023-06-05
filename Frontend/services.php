@@ -16,7 +16,7 @@
                 <li><a href="#" class="icons" id="logo"><ion-icon name="logo-html5"></ion-icon></ion-icon></a></li>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Service</a></li>
+                <li><a href="./services.php">Services</a></li>
                 <li><a href="./contact.php">Contact</a></li>
 
             </ul>
@@ -36,17 +36,18 @@
     </section>
 
     <section class="text">
-        <div class="service">
-            <div>
-            <h2>OUR SERVICE</h2><br>
-                <p>Specials4U is the premier destination for savvy shoppers seeking the best grocery store specials and savings.</p><br>
-                <p>We understand the importance of finding great deals on everyday essentials especially during the spikes in food prices, and we're here to make your shopping experience both convenient and budget-friendly.</p><br>
-                <p>At Specials4U, we've curated a comprehensive collection of grocery store specials from your favorite local retailers.</p><br>
-                <p>Our user-friendly website is designed to help you quickly and easily discover the latest discounts, promotions, and exclusive offers, all in one place. With just a few clicks, you'll unlock a world of savings and make informed purchasing decisions.</p><br>
-                <p>Join our growing community of smart shoppers today and experience the convenience of finding the best grocery store specials in one place. Together, let's make every shopping trip a delightful and cost-effective adventure!</p>
-            </div>
+    <div class="service">
+        <div>
+            <h2>OUR SERVICES</h2><br>
+            <p>Specials4U is the premier destination for savvy shoppers seeking the best grocery store specials and savings.</p><br>
+            <p>We understand the importance of finding great deals on everyday essentials especially during the spikes in food prices, and we're here to make your shopping experience both convenient and budget-friendly.</p><br>
+            <p>At Specials4U, we've curated a comprehensive collection of grocery store specials from your favorite local retailers.</p><br>
+            <p>Our user-friendly website is designed to help you quickly and easily discover the latest discounts, promotions, and exclusive offers, all in one place. With just a few clicks, you'll unlock a world of savings and make informed purchasing decisions.</p><br>
+            <p>Join our growing community of smart shoppers today and experience the convenience of finding the best grocery store specials in one place. Together, let's make every shopping trip a delightful and cost-effective adventure!</p>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -7,16 +7,22 @@
 
 
 /* Style the body element */
-body {
+/* body {
     
     background-color: #E7DEDE;
     width: 100%;
     background-image:linear-gradient(to bottom left,orange 50%,white 50%) ;
-} 
+}  */
+
+.border {
+    color: orange;
+    background-color: orange;
+    height: 12em;
+}
 
 nav ul li a {
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.2em;
     padding-left: 2em;
     color: black;
     font-weight: bold;
@@ -61,11 +67,12 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -5em;
 }
 .section2 {
     display: flex;
     justify-content: right;
-    margin-top: -30em;
+    margin-top: -31em;
 }
 .login-box {
     display: flex;
@@ -75,6 +82,13 @@ section {
     border-radius: .3em;
     border: solid rgb(230, 230, 230);
     width: 30em;
+}
+
+
+#profile_icon,
+#cart_icon {
+  color: orange;
+  margin-left: 1em;
 }
 
 .login-box .box {
@@ -91,12 +105,14 @@ section {
     
 }
 .login-box .input-container input:hover {
-    border-color: 1px solid orange;
-    outline: none;
+    border-color: 2px solid orange;
+    
 
 }
 
-
+h1 {
+    text-align: center;
+}
 
 .login-box .input-container input {
   width: 100%;

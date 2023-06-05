@@ -38,6 +38,7 @@
                         <a href="">Home</a>
                         <a href="./services.php">Services</a>
                         <a href="./contact.php">Contact</a>
+                        <button name="LogoutButton" class="edit1" style="height: 40px; width:80px; color:white; background-color:red; border-radius:10px; border:none; font-weight:bold">Logout</button>
                     </div>
     
                     <!-- logo icon -->
@@ -65,7 +66,7 @@
         </div>
         <div class="position_picture choose_picture">
             <input type="file" id="image" onchange="previewImage()">
-            <button type="button" onclick="toggleEditability()" class="edit_btn">Edit Profile</button>
+            <button type="button" onclick="changeEditability()" class="edit_btn button" >Edit Profile</button>
     </div>
     </div>
 
@@ -85,7 +86,7 @@
             }
         }
 
-        function toggleEditability() {
+        function changeEditability() {
             var inputs = document.querySelectorAll('.proInput');
             inputs.forEach(function(input) {
                 input.readOnly = !input.readOnly;
@@ -108,9 +109,9 @@
                     <input type="email" placeholder="DanielJohnson@gmail.com" value=" <?php echo $emailCred;?>" class="proInput" name="userEmail" readonly ><br>
                     <label for="cellnumber">Cellphone number</label><br>
                     <input type="tel" placeholder="071 223 1111" value=" <?php echo '0'.$cellNum;?>" class="proInput"  name="userCellNumber" readonly ><br>
-                    <button name="editButton" class="edit1" style="height: 40px; width:80px; background-color:orange; border-radius:10px; border:none; font-weight:bold">Update</button>
-                    <button name="deleteButton" class="edit1" style="height: 40px; width:80px; background-color:rgba(184, 29, 29, 0.705); border-radius:10px; border:none; font-weight:bold; position:relative; left: 85%; bottom: 8%; ">Delete</button>
-                    <button name="LogoutButton" class="edit1" style="height: 40px; width:80px; background-color:red; border-radius:10px; border:none; font-weight:bold">Logout</button>
+                    <button name="editButton" class="edit1 button" style="height: 40px; width:80px; background-color:orange; border-radius:10px; border:none; font-weight:bold">Update</button>
+                    <button name="deleteButton" class="edit1 button" style="height: 40px; width:80px; background-color:rgba(184, 29, 29, 0.705); border-radius:10px; border:none; font-weight:bold; position:relative; left: 85%; bottom: 8%; ">Delete</button>
+                    
                     <br>
                     <br>
                 </div>
