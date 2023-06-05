@@ -96,12 +96,11 @@ def woolies_scraper(data, website):
             item_name = item.find("a", class_="range--title").text
             current_price = item.find("span", class_="font-graphic").strong.text
             smart_price = item.find("div", class_="product__special").text
-            #image links aren't being accessed
-            # picture = item.find("img", class_="product-card__img lazyloaded")['src']
+            price_only = smart_price.split()[4]
         except:
             continue
         
-        file.writerow([item_name, current_price, smart_price])
+        file.writerow([item_name, price_only, current_price])
 
 def main():
     """
