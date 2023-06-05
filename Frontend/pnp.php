@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="MainPage.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +15,10 @@
   <input type="hidden" id="result-data" name="resultData">
 </form>
 
+
 <a href="ProductBoxesDetails.php">
 <div class="Cart" style="position:absolute; top:10%; right:10%;">
-  <p>O</p>
+  <p>🛒</p>
 </div>
 </a>
 
@@ -169,7 +170,6 @@ inputBox.addEventListener("input", () => {
 
 
 // ProductBoxes
-// Create an empty array to store the clicked product details
 const Results = [];
 
 const container = document.querySelector(".ProductContainer");

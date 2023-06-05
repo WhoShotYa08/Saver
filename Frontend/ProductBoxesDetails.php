@@ -4,7 +4,8 @@
   <title>Product Boxes</title>
 </head>
 <body>
-  <div class="ProductContainer"></div>
+  <div class="ProductContainer">
+  </div>
 
   <script>
     // Retrieve the Results array from local storage

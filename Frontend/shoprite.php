@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="MainPage.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,13 @@
   <div id="output" class="result-container"></div>
   <input type="hidden" id="result-data" name="resultData">
 </form>
+
+<a href="ProductBoxesDetails.php">
+<div class="Cart" style="position:absolute; top:10%; right:10%;">
+  <p>🛒</p>
+</div>
+</a>
+
 
 <h1 style="color: #FFA033;font-size: 50px;" id="heading">Shoprite</h1>
 <div class="FixedSideBar"><!--The Store selector SideBar-->

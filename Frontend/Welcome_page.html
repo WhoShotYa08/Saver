@@ -20,8 +20,8 @@
     </nav>
 
     <nav class="HeaderTwo">
-        <a href="/LoginPage.php">Register</a>
-        <button type="button">Sign Up</button>
+        <a href="LoginPage.php">Login</a>
+        <button type="button" id="redirectButton">Sign Up</button>
     </nav>
 
 </header>
@@ -38,12 +38,18 @@
 </div>
 
 
-<div class="container">
+<!-- <div class="container">
     <svg class="Shape" viewBox="0 0 150 100">
         <polygon id="SideTriangle" points="150,0 0,100 150,100"/>
     </svg>
-</div>
+</div> -->
 
+<script>
+    const redirectButton = document.getElementById("redirectButton");
+    redirectButton.addEventListener("click", function() {
+      window.location.href = "SignUpPage.php";
+    });
+  </script>
 
 </body>
 </html>

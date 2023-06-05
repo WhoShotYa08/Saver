@@ -9,7 +9,7 @@
 <body>
 
 <div class="Container">
-
+    <p><span style="font-size:20px; font-weight:bold; position: absolute; left:10">Product Details</span></p>
 </div>
 
 
