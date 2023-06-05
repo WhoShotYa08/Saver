@@ -16,10 +16,6 @@
     <script src="https://kit.fontawesome.com/6e07084945.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Background Shape -->
-    <!-- <svg class="BackgroundShape" height="640" width="1280">
-        <polygon id="SideTriangle" points="0, 0 1300, 645 0, 645"/>
-    </svg> -->
 
     <section>
         <!-- Login Box -->

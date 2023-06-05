@@ -43,24 +43,37 @@
         </nav>
     </header> -->
 
-    <div class="navbar">
     <header>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="./contact.php">Contact</a></li>
-        </ul>
-    </nav>
+        <div class="navbar">
+    
+            <nav>
+                <ul>
+                    <li><a href="#" class="icons" id="logo"><ion-icon name="logo-html5"></ion-icon></ion-icon></a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="./services.php">Service</a></li>
+                    <li><a href="./contact.php">Contact</a></li>
+
+                </ul>
+                <div class="profile_cart">
+                        <a href="./profile.php" class="icons" id="profile_icon"><ion-icon name="person-circle-outline"></ion-icon></a>
+                        
+                        <!-- shopping cart icon -->
+                        <a href="#" class="icons" id="cart_icon"><ion-icon name="cart-outline"></ion-icon></a>
+                </div>
+            </nav>
+            
+        </div>
     </header>
+
+    <div class="border">
+        <span>.</span>
     </div>
 
-    <br><br><br><br>
     <section class="section">
     <div class="login-box">
         <form action="" method="post">
-        <h2>Contact</h2>
+        <h2>Contact</h2> <br>
         <div class="box">
             <div class="grid-container">
             <div class="input-container">
@@ -83,27 +96,31 @@
     </section>
 
     <section class="section2">
-        
-        <div id="advert">
-          <h1>Advertisments</h1>
-          <div class="main-advert">
-            <iframe width="250" height="270" src="https://www.youtube.com/embed/8zq0VbgU5aA?autoplay=1&mute=1" frameborder="3"></iframe>
-            </div>
-  
-  
-            <div class="other-adverts">
-            <iframe width="125" height="160" src="https://www.youtube.com/embed/Spt_V04IWKg?autoplay=1&mute=1&loop=1" frameborder="0"></iframe>
-              <iframe width="125" height="160" src="https://www.youtube.com/embed/Lv8ekWAK_1Q?autoplay=1&mute=1&loop=1"frameborder="0"></iframe>
-            </div>
-            <div> 
-            <iframe width="125" height="160" src="https://www.youtube.com/embed/QvZXYpnBGp0?autoplay=1&mute=1&loop=1" frameborder="0"></iframe>
-                <iframe width="125" height="160" src="https://www.youtube.com/embed/7liDJhV2yZY?autoplay=1&mute=1&loop=1"  frameborder="0"></iframe>
-            
-            </div>
-            
+    <div id="advert" style="display: none;">
+        <h1>Advertisements</h1>
+        <div class="main-advert">
+            <iframe class="video" width="250" height="280" src="https://www.youtube.com/embed/8zq0VbgU5aA?autoplay=1&mute=1&loop=1" frameborder="3"></iframe>
         </div>
-      </section>
-    
+        <div class="other-adverts">
+            <iframe class="video" width="125" height="170" src="https://www.youtube.com/embed/Spt_V04IWKg?autoplay=1&mute=1&loop=1" frameborder="0"></iframe>
+            <iframe class="video" width="125" height="170" src="https://www.youtube.com/embed/Lv8ekWAK_1Q?autoplay=1&mute=1&loop=1" frameborder="0"></iframe>
+        </div>
+        <div> 
+            <iframe class="video" width="125" height="170" src="https://www.youtube.com/embed/QvZXYpnBGp0?autoplay=1&mute=1&loop=1" frameborder="0"></iframe>
+            <iframe class="video" width="125" height="170" src="https://www.youtube.com/embed/7liDJhV2yZY?autoplay=1&mute=1&loop=1" frameborder="0"></iframe>
+        </div>
+    </div>
+    </section>
 
+      <script>
+    setTimeout(function() {
+        var advertSection = document.getElementById("advert");
+        advertSection.style.display = "block";
+    }, 3000);
+</script>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./contact.js"></script>
 </body>
 </html>
