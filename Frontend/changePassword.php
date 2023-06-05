@@ -22,8 +22,9 @@
         if( $password == $confirmPassword ){
             header("Location: LoginPage.php");
 
+            $encryptedChangePassword = password_hash($password, PASSWORD_DEFAULT);
             //updating password in database
-            $updatePassword = "UPDATE signUp_details SET userPassword = '$password' WHERE emailAddress='$currentEmail'";
+            $updatePassword = "UPDATE signUp_details SET userPassword = '$encryptedChangePassword' WHERE emailAddress='$currentEmail'";
             mysqli_query($createConnection, $updatePassword);
 
             echo "<p class='changePassword' > $passwordChangeSuccess </p>";
