@@ -3,6 +3,21 @@
     include "forgotPassword.php";
     // include "facebookLogin.php";
     // include "logout.php";
+    if(isset($_POST["userID"])){
+        $_SESSION["userID"] = $_POST["userID"];
+        $_SESSION["email"] = $_POST["email"];
+        $_SESSION["name"] = $_POST["name"];
+        $_SESSION["first_name"] = $_POST["first_name"];
+        $_SESSION["last_name"] = $_POST["last_name"];
+
+        $firstName = $_SESSION["first_name"];
+        $lastName = $_SESSION["last_name"];
+        $email = $_SESSION["email"];
+        $insertFbDetails = "INSERT INTO `signup_details`(`firstName`, `lastName`, `emailAddress`) VALUES ('$firstName', '$lastName', '$email')";
+        mysqli_query($createConnection, $insertFbDetails);
+
+        exit("Success");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +72,7 @@
             <form >
                 <div class="login-with">
                         <button class="google-btn"><i class="fa-brands fa-google" id="google-icon" style="color: #000000;"></i>Login with google</button><br><br>
-                        <button class="facebook-btn" onclick="logIn"><i class="fa-brands fa-facebook-f" id="facebook-icon" style="color: #000000;"></i>Login with facebook</button>
+                        <button class="facebook-btn" onclick="logIn()"><i class="fa-brands fa-facebook-f" id="facebook-icon" style="color: #000000;"></i>Login with facebook</button>
                 </div>
             </form>
         </div>
@@ -81,20 +96,42 @@
     </section>
     </div>
     <script>
-            function logIn(){
-                FB.login(function (response){
-                    console.log(response);
-                })
-            }
-        window.fbAsyncInit = function() {
-            FB.init({
-            appId            : '639342924737059',
-            autoLogAppEvents : true,
-            xfbml            : true,
-            version          : 'v17.0'
-            });
-        };
+            var user = { userID: "", name: "", accessToken: "", first_name: "", last_name: "", email: "" };
+      function logIn() {
+        FB.login(function (response) {
+          if (response.status === "connected") {
+            user.userID = response.authResponse.userID;
+            user.accessToken = response.authResponse.accessToken;
+            
+            FB.api("/me?fields=id,email,first_name,last_name", function (userData) {
+              user.name = userData.name;
+              user.email = userData.email;
+              user.first_name = userData.first_name;
+              user.last_name = userData.last_name;
 
+              $.ajax({
+                url: "LoginPage.php",
+                method: "post",
+                dataType: "text",
+                success: function (serverResponse) {
+                  if (serverResponse == "success") {
+                    window.location = "profile.php";
+                  }
+                }
+              });
+            });
+          }
+        }, { scope: "email,public_profile" });
+      }
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: '639342924737059',
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: 'v17.0'
+        });
+      };
+      //end of facebook login
 
 </script>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
