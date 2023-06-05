@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form method="get" action="item-details-shoprite.php">
+<form method="get" action="SearchBarDetails.php">
   <input type="text" id="input-field" name="search" placeholder="Search In Specials4You">
   <div id="output" class="result-container"></div>
   <input type="hidden" id="result-data" name="resultData">
@@ -116,7 +116,7 @@ inputBox.addEventListener("input", () => {
       let SecondColumn = item[Object.keys(item)[1]];
       return `
         <div class="result-item">
-          <a href="item-details-shoprite.php" class="result-link" data-index="${index}">
+          <a href="SearchBarDetails.php" class="result-link" data-index="${index}">
             <img src="${imageSrc}" alt="Image" name="img"></img>
             <p name="name">${name}</p>
             <p name="discountprice">${thirdColumn}</p>
@@ -146,10 +146,6 @@ inputBox.addEventListener("input", () => {
     });
   }
 });
-
-
-
-
 
 
 
