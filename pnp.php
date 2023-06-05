@@ -23,7 +23,6 @@
 
 <h1 style="color: #FFA033;font-size: 50px;" id="heading">Pick n' Pay</h1>
 <div class="FixedSideBar">
-  <!--The Store selector SideBar-->
   <ul>
     <h id="SideBarTitle" style="font-size: 35px; font-weight: bolder;">Store Selection</h><br>
     <a href="#" class="Store" onclick="toggleDropdown(this)" style="font-weight: bold;font-size: 25px;color: #FFA033;">Pick n' Pay<span class="plus-sign">&nbsp;&nbsp;&nbsp;+</span></a>
@@ -79,9 +78,6 @@ function toggleDropdown(element) {
 
 
 
-
-
-
 // Opening and Storing in Object
 // Pnp
 const request = new XMLHttpRequest();
@@ -108,8 +104,6 @@ for (let i = 1; i < rows.length; i++) {
     }
   }
 }
-
-
 
 
 // SearchBox
@@ -227,6 +221,7 @@ data.forEach(item => {
 });
 
 localStorage.setItem("Results", JSON.stringify(Results));
+
 
 
 </script>

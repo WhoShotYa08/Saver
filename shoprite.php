@@ -62,6 +62,12 @@
 </div>
 
 <script>
+//Sidebar
+function toggleDropdown(element) {
+    element.classList.toggle('show');
+  }
+
+
 // Opening and Storing in Object
 // Pnp
 const request = new XMLHttpRequest();
@@ -150,24 +156,25 @@ inputBox.addEventListener("input", () => {
 
 
 // ProductBoxes
+const Results = [];
+
 const container = document.querySelector(".ProductContainer");
 data.forEach(item => {
-    const box = document.createElement("div");
-    box.classList.add("ProductBox");
-    box.style.width = "150px";
-    box.style.height = "260px";
-    box.style.border = "2px solid white"; // Add white border with 2px thickness
-    box.style.borderRadius = "20px"; // Add border radius of 20px
-    box.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)"; // Add box shadow
-    box.style.paddingLeft = "10px";
-
+  const box = document.createElement("div");
+  box.classList.add("ProductBox");
+  box.style.width = "150px";
+  box.style.height = "260px";
+  box.style.border = "2px solid white";
+  box.style.borderRadius = "20px";
+  box.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
+  box.style.paddingLeft = "10px";
 
   const imgElement = document.createElement("img");
   const lastColumnName = headers[headers.length - 1];
   const lastColumnValue = item[lastColumnName];
   imgElement.src = lastColumnValue;
-  imgElement.style.width = "150px"; // Set desired width
-  imgElement.style.height = "150px"; // Set desired height
+  imgElement.style.width = "150px";
+  imgElement.style.height = "150px";
 
   box.appendChild(imgElement);
 
@@ -185,12 +192,22 @@ data.forEach(item => {
   const firstColumnValue = item[firstColumnName];
 
   const firstColumnElement = document.createElement("p");
-  firstColumnElement.textContent = firstColumnValue;
+  firstColumnElement.textContent = firstColumnValue + "    " + "+";
+
 
   box.appendChild(firstColumnElement);
 
+  box.addEventListener("click", () => {
+    Results.push(item);
+    localStorage.setItem("Results", JSON.stringify(Results));
+    alert("Product added succesfully");
+  });
+
   container.appendChild(box);
 });
+
+localStorage.setItem("Results", JSON.stringify(Results));
+
 
 
 </script>
