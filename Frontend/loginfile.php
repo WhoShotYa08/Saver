@@ -46,7 +46,7 @@
                 if( $emailAddress == $email && password_verify($loginPassword, $password) && $verified == true ){
                     $_SESSION["loginEmail"] = $emailAddress;
                     $_SESSION["loginPassword"] = $loginPassword;
-                    header("Location: profile.php");
+                    header("Location: pnp.php");
                     // header("Location:Saver/groceryList.php");
                     exit();
                 }

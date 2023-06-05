@@ -1,3 +1,7 @@
+<?php 
+    include "dBConnection.php";
+    
+  ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,7 +24,7 @@
   </style>
   <!-- Sign-up form -->
   <div class="signup-box">     
-    <form action="dBConnection.php" method="POST" >
+    <form action="" method="POST" >
       <!-- Heading for signup field -->
       <h2>Sign-Up</h2>
         
@@ -93,9 +97,6 @@
    <!-- Ionicons script to display icons in input fields -->
    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
-  <?php 
-    include "dBConnection.php";
-    
-  ?>
+
   </body>
 </html>

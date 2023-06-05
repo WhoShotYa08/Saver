@@ -8,8 +8,8 @@
     $otpCode = rand(10000, 99999);
     $name =  $surname = $emailAddress = $cellphoneNum = $password = $confirmPassword = "";
 
-
-    function sendData($otpCode, $createConnection, $emailAddress, $cellphoneNum, $passWord, $name, $surname, $confirmPassword){
+    $error = "Password do not match";
+    function sendData($otpCode, $createConnection, $emailAddress, $cellphoneNum, $passWord, $name, $surname, $confirmPassword, $error){
       // $name =  $surname = $emailAddress = $cellphoneNum = $password = $confirmPassword = "";
 
 
@@ -49,19 +49,23 @@
             if(mysqli_query($createConnection, $insertQuery) == true){
               echo "New record inserted successfully";
               $_SESSION["email"] = $emailAddress;
+              header('Location: OTP.php');
+              exit();
             }
             else{
               echo "No record inserted, Please try again".mysqli_error($createConnection);
             }
+          }
+          else{
+            $error = "Password do not match";
           }
         }
       }
     }
 
     if(isset($_POST["signUp"]) == true){
-      sendData($otpCode, $createConnection, $emailAddress, $cellphoneNum, $passWord, $name, $surname, $confirmPassword);
-      header('Location: OTP.php');
-      exit();
+      sendData($otpCode, $createConnection, $emailAddress, $cellphoneNum, $passWord, $name, $surname, $confirmPassword, $error);
+      
     }
 
     
