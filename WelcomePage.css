@@ -29,9 +29,10 @@ header{
     flex-direction: row;
     z-index: 2;
     flex-wrap: nowrap;
-    padding-top: 20px;
+    padding-top: 15px;
+    margin-right: 50px;
 }
-nav:not(button) {
+.HeaderTwo{
     font-size: 15px;
     z-index: 2;
     
@@ -42,17 +43,16 @@ a{
 }
 
 
-header nav:first-child {
+.HeaderOne{
     margin-right:40%;
 }
 
 header nav button {
     background-color: #FFA133;
-    font-size: 20px;
-    font-weight: bolder;
+    font-size: 15px;
     border-radius: 15px;
     height: 40px;
-    width: 100px;
+    width: 80px;
     border: #FFA133 2px solid;
 }
 
