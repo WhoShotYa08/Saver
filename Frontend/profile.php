@@ -38,7 +38,11 @@
                         <a href="">Home</a>
                         <a href="./services.php">Services</a>
                         <a href="./contact.php">Contact</a>
-                        <button name="LogoutButton" class="edit1" style="height: 40px; width:80px; color:white; background-color:red; border-radius:10px; border:none; font-weight:bold">Logout</button>
+                        <form action="" method="post">
+                            <button name="LogoutButton" style= "width: 6em; padding: 1em; color: white; cursor: pointer; background-color: red; border: none; border-radius: 2em" >Logout</button>
+                        </form>
+
+                        <!-- <button name="LogoutButton" class="edit1" style="height: 40px; width:80px; color:white; background-color:red; border-radius:10px; border:none; font-weight:bold">Logout</button> -->
                     </div>
     
                     <!-- logo icon -->
@@ -47,10 +51,11 @@
                     <span> <a href="?urlRedirect=Saver/groceryList.php" class="navBarphp">Grocery Items</a> </span>
     
                     <div class="profile_cart">
-                        <a href="#" class="icons" id="profile_icon"><ion-icon name="person-circle-outline"></ion-icon></a>
+                        <a href="./profile.php" class="icons" id="profile_icon"><ion-icon name="person-circle-outline"></ion-icon></a>
                         
                         <!-- shopping cart icon -->
-                        <a href="#" class="icons" id="cart_icon"><ion-icon name="cart-outline"></ion-icon></a>
+                        <a href="./ProductBoxesDetails.php" class="icons" id="cart_icon"><ion-icon name="cart-outline"></ion-icon></a>
+                        
                     </div>
                 </ul>
                 <!-- profile icon -->

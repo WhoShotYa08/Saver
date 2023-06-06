@@ -59,7 +59,7 @@
                         <a href="./profile.php" class="icons" id="profile_icon"><ion-icon name="person-circle-outline"></ion-icon></a>
                         
                         <!-- shopping cart icon -->
-                        <a href="#" class="icons" id="cart_icon"><ion-icon name="cart-outline"></ion-icon></a>
+                        <a href="./ProductBoxesDetails.php" class="icons" id="cart_icon"><ion-icon name="cart-outline"></ion-icon></a>
                 </div>
             </nav>
             
@@ -87,7 +87,7 @@
             </div>
             </div>
             <div class="p-container">
-            <p>Address <br>732 Coster Avenue <br>Johannesburg South <br>2998 <br><br> <b>Email:</b><br>special4You@business.co.za <br><br>Phone: <br> 0723567891</p>
+            <p><b>Address:</b> <br>732 Coster Avenue <br>Johannesburg South <br>2998 <br><br> <b>Email:</b><br>special4You@business.co.za <br><br><b>Phone:</b> <br> 0723567891</p>
             </div>
         </div>
         <button>Submit</button>
@@ -112,12 +112,12 @@
     </div>
     </section>
 
-      <script>
-    setTimeout(function() {
-        var advertSection = document.getElementById("advert");
-        advertSection.style.display = "block";
-    }, 3000);
-</script>
+    <script>
+        setTimeout(function() {
+            var advertSection = document.getElementById("advert");
+            advertSection.style.display = "block";
+        }, 4000);
+    </script>
     
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
