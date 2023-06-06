@@ -25,7 +25,7 @@
 
         // Send email
         if ($mail->send()) {
-            echo 'Email sent successfully.';
+            echo '';
         } else {
             echo 'Error: ' . $mail->ErrorInfo;
         }

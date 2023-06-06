@@ -1,5 +1,6 @@
 body {
     background-color: #E7DEDE;
+    min-width: auto;
 }
 .container {
     position: absolute;
@@ -12,6 +13,7 @@ body {
     align-items: flex-start;
     fill: #FFA133;
     margin-right: auto;
+    
 }
 .image{
     z-index: 1;
@@ -20,9 +22,12 @@ body {
     align-items: right;
     margin-top: -30%;
     margin-right: 10%;
+
 }
 img{
     z-index: 2;
+    max-width: 100%;
+    height: auto;
 }
 header{
     display: flex;
@@ -31,6 +36,8 @@ header{
     flex-wrap: nowrap;
     padding-top: 15px;
     margin-right: 50px;
+    max-width: 100%;
+    height: auto;
 }
 .HeaderTwo{
     font-size: 15px;
