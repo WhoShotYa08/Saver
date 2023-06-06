@@ -74,7 +74,7 @@
             <p> <?php $notVerified; ?> </p>
             <p>Enter <b>OTP code</b> sent to your number:</p><br>
             <input type="password" id="otp_code" placeholder="Enter OTP here" name="otp"><br>
-            <p><?php echo $invalidOTP;?></p>
+            <p><?php echo $invalidOTP;?></p><br>
             <button name="submitOTP"><a href="LoginPage.php"><b>Verify</b></a></button>
              <button id="resendEmail" name="resendEmail">Resend Email</button>
             <br>
