@@ -37,8 +37,12 @@
         $rowCheck = mysqli_num_rows($runcheckUser);
 
         if($rowCheck>0){
+          
+          // echo "<script>window.location.href = 'LoginPage.php';</script>";
+          $error = "You are a registered user, please login";
+          $_SESSION['error'] = $error;
+          // $errMSG = $_SESSION['error'];
           header("Location: LoginPage.php");
-          echo $name = "You are a registered user, please login";
           exit();
         }
         else{
@@ -47,17 +51,19 @@
             $insertQuery = "INSERT INTO signUp_details (firstName, lastName, emailAddress, cellphoneNum, userPassword, otp) VALUES ('$name', '$surname', '$emailAddress', $cellphoneNum, '$encyrptedPassword', $otpCode)";
             include "sendEmail.php";
             if(mysqli_query($createConnection, $insertQuery) == true){
-              echo "New record inserted successfully";
+              $error =  "New record inserted successfully";
               $_SESSION["email"] = $emailAddress;
               header('Location: OTP.php');
               exit();
             }
             else{
-              echo "No record inserted, Please try again".mysqli_error($createConnection);
+              $error =  "No record inserted, Please try again".mysqli_error($createConnection);
+              $_SESSION['error'] = $error;
             }
           }
           else{
             $error = "Password do not match";
+            $_SESSION['error'] = $error;
           }
         }
       }

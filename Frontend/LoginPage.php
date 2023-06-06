@@ -37,9 +37,14 @@
         <div class="login-box">     
             <form action="" method="post" >
                 <h2>Login</h2>
-                
-
-                <p id="incorrectLogin"> <?php $incorrectDetails; ?> </p>
+                <p id="errorReport"><?php 
+                  if(!isset($_SESSION['error'])){
+                    echo "";
+                  }
+                  else{
+                    echo $_SESSION['error'];
+                  }
+                ?></p>
                 <!-- Input Box (Email) -->
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
