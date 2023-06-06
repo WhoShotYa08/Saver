@@ -5,7 +5,6 @@
     $otp ="";
     $invalidOTP = "Please Enter valid OTP";
     $accVerified = "Your Account has been verified, you may now login";
-    // $emailAddress = "";
 
     
 
@@ -13,7 +12,7 @@
         $otp = $_POST["otp"];
         $intOTP = (int)$otp;
         // $emailAddress = $_POST["email"];
-        echo $_SESSION["email"];
+        // echo $_SESSION["email"];
         verifyOTP($intOTP, $invalidOTP, $createConnection, $_SESSION["email"], $accVerified, $otpCode);
     }
     function verifyOTP($intOTP, $invalidOTP, $createConnection, $emailAddress, $accVerified, $otpCode){
@@ -26,11 +25,17 @@
             if($intOTP == $otpKey){
                 $updateBool = "UPDATE signUp_details SET verified = true WHERE emailAddress = '$emailAddress'";
                 $updateOTP = "UPDATE signUp_details SET otp = 00000 WHERE emailAddress = '$emailAddress'";
-                mysqli_query($createConnection, $updateBool);
-                mysqli_query($createConnection, $updateOTP);
-                echo  $accVerified;
-                header("Location: LoginPage.php");
-                exit();
+                $updateBool1 = mysqli_query($createConnection, $updateBool);
+                $updateOTP1 = mysqli_query($createConnection, $updateOTP);
+                if($updateBool1 == true && $updateOTP1 == true){
+                    echo  $accVerified;
+                    header("Location: LoginPage.php");
+                    exit();
+                }
+                else{
+                    echo "<p>Data not inserted</p>";
+                }
+
             }
             else{
                 echo $invalidOTP;
@@ -39,7 +44,17 @@
         else{
             echo "Error";
         }
+
+
+        if(isset($_POST["resendEmail"])){
+            $otpCode = rand(10000, 99999);
+            
+            $updateNewOTP = "UPDATE `signup_details` SET `otp`='$otpCode' WHERE emailAddress = '$emailAddress'";
+            include "sendEmail.php";
+            mysqli_query($createConnection, $updateNewOTP);
+        }
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,6 +76,7 @@
             <input type="password" id="otp_code" placeholder="Enter OTP here" name="otp"><br>
             <p><?php echo $invalidOTP;?></p>
             <button name="submitOTP"><a href="LoginPage.php"><b>Verify</b></a></button>
+             <button id="resendEmail" name="resendEmail">Resend Email</button>
             <br>
         </div>
     </form>
