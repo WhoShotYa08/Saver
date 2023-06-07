@@ -229,8 +229,6 @@ data.forEach(item => {
 
 localStorage.setItem("Results", JSON.stringify(Results));
 
-
-
 </script>
 </body>
 </html>

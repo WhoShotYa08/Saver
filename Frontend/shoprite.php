@@ -76,10 +76,11 @@ function toggleDropdown(element) {
   }
 
 
+
 // Opening and Storing in Object
 // Pnp
 const request = new XMLHttpRequest();
-request.open("GET", "shoprite.csv", false);
+request.open("GET", "pnp.csv", false);
 request.send(null);
 
 const csvData = request.responseText;
@@ -102,8 +103,6 @@ for (let i = 1; i < rows.length; i++) {
     }
   }
 }
-
-// SearchBox
 
 
 // SearchBox
@@ -226,8 +225,6 @@ data.forEach(item => {
 });
 
 localStorage.setItem("Results", JSON.stringify(Results));
-
-
 </script>
 </body>
 </html>
