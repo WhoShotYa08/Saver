@@ -104,6 +104,9 @@ for (let i = 1; i < rows.length; i++) {
 }
 
 // SearchBox
+
+
+// SearchBox
 const inputBox = document.getElementById("input-field");
 const output = document.getElementById("output");
 const resultDataInput = document.getElementById("result-data"); 
@@ -140,11 +143,13 @@ inputBox.addEventListener("input", () => {
       `;
     }).join("");
     output.innerHTML = outputHTML;
+
     const resultLinks = document.querySelectorAll('.result-link');
     resultLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
         event.preventDefault(); 
         const resultIndex = link.getAttribute('data-index');
+
         let clickedResult = filteredData[resultIndex];
         let resultItem = {
           imageSrc: clickedResult[Object.keys(clickedResult)[Object.keys(clickedResult).length - 1]],
@@ -171,7 +176,7 @@ data.forEach(item => {
   const box = document.createElement("div");
   box.classList.add("ProductBox");
   box.style.width = "150px";
-  box.style.height = "260px";
+  box.style.height = "280px";
   box.style.border = "2px solid white";
   box.style.borderRadius = "20px";
   box.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
@@ -221,7 +226,6 @@ data.forEach(item => {
 });
 
 localStorage.setItem("Results", JSON.stringify(Results));
-
 
 
 </script>
