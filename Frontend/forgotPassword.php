@@ -28,8 +28,8 @@
                 exit();
             }
             else{
-                header("Location: SignUpPage.php");
-                echo "<p id='errormsg'>".$notRegUser."</p>";
+                
+                header("Location: LoginPage.php");
                 exit();
             }
     }

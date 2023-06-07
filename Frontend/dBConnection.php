@@ -1,6 +1,14 @@
 <?php 
   session_start();
-
+  if (isset($_GET['error'])) {
+    $error = $_GET['error'];
+    echo '<script>
+        window.onload = function() {
+            var errorRepo = document.getElementById("errorRepo");
+            errorRepo.innerText = "'. $error .'";
+        };
+    </script>';
+}
 
     include "databaseCreation.php";
 
@@ -36,35 +44,42 @@
         //getting row number.....should return number greater than 0 if user exists
         $rowCheck = mysqli_num_rows($runcheckUser);
 
-        if($rowCheck>0){
-          
-          // echo "<script>window.location.href = 'LoginPage.php';</script>";
-          $error = "You are a registered user, please login";
-          $_SESSION['error'] = $error;
-          // $errMSG = $_SESSION['error'];
-          header("Location: LoginPage.php");
-          exit();
-        }
-        else{
+        if($rowCheck == 0){
           if($passWord == $confirmPassword){
             $encyrptedPassword = password_hash($passWord , PASSWORD_DEFAULT);
             $insertQuery = "INSERT INTO signUp_details (firstName, lastName, emailAddress, cellphoneNum, userPassword, otp) VALUES ('$name', '$surname', '$emailAddress', $cellphoneNum, '$encyrptedPassword', $otpCode)";
             include "sendEmail.php";
+            
             if(mysqli_query($createConnection, $insertQuery) == true){
-              $error =  "New record inserted successfully";
               $_SESSION["email"] = $emailAddress;
-              header('Location: OTP.php');
+              // $error =  "New record inserted successfully";
+              header("Location: OTP.php");
               exit();
             }
             else{
               $error =  "No record inserted, Please try again".mysqli_error($createConnection);
-              $_SESSION['error'] = $error;
-            }
+              echo '<script>
+                    window.onload = function() {
+                        var errorRepo = document.getElementById("errorRepo");
+                        errorRepo.innerText = "'. $error .'";
+                    };
+                </script>';
+                }
           }
           else{
-            $error = "Password do not match";
-            $_SESSION['error'] = $error;
+            $error = "Passwords do not match";
+            echo '<script>
+                window.onload = function() {
+                    var errorRepo = document.getElementById("errorRepo");
+                    errorRepo.innerText = "'. $error .'";
+                };
+            </script>';
           }
+        }
+        else{
+          $error = "You are a registered user, please login";
+          header("Location: LoginPage.php?error=" . urlencode($error));
+          exit();
         }
       }
     }

@@ -3,15 +3,6 @@
     include "databaseCreation.php";
     include "validateInput.php";
 
-    // function validateUserInput($Input){
-    //     $Input = trim($Input);
-    //     $Input = stripslashes($Input);
-    //     $Input = htmlspecialchars($Input);
-    //     return $Input;
-    // }
-
-    // echo $_SERVER["REQUEST_METHOD"];
-
     echo "<br>";
     $loginEmail = $loginPassword = "";
     $notRegistered = "You are not a registered user, Please sign up";
@@ -48,33 +39,51 @@
                     $_SESSION["loginEmail"] = $emailAddress;
                     $_SESSION["loginPassword"] = $loginPassword;
                     header("Location: pnp.php");
-                    // header("Location:Saver/groceryList.php");
                     exit();
                 }
                 elseif($emailAddress == $email && password_verify($loginPassword, $password) && $verified == false ){
-                    header("Location: OTP.php");
+                    // header("Location: OTP.php");
                     $error = "Your account is not verified, please enter the OTP sent to your email";
-                    $_SESSION['error'] = $error;
                     $otpCode = rand(10000, 99999);
                     $updateOTP = "UPDATE signUp_details SET otp = '$otpCode' WHERE emailAddress = '$emailAddress'";
                     mysqli_query($createConnection, $updateOTP);
                     include "sendEmail.php";
-                    // $notVerified;
+                    $error = "You are a registered user, please login";
+                    header("Location: OTP.php?error=" . urlencode($error));
                     exit();
                 }
-                elseif( ($emailAddress == $email && !password_verify($loginPassword, $password) && $verified == true) || ($emailAddress != $email && $loginPassword == $password && $verified == true ) ){
+                elseif( ($emailAddress == $email && !password_verify($loginPassword, $password) && $verified == true) || ($emailAddress != $email && password_verify($loginPassword, $password) && $verified == true ) ){
                     
                     $error =  "Incorrect login details. Please try again";
-                    $_SESSION['error'] = $error;
-                    header("Location: LoginPage.php");
+                    echo '<script>
+                    window.onload = function() {
+                        var errorRepo = document.getElementById("errorRepo");
+                        errorRepo.innerText = "'. $error .'";
+                        };
+                    </script>';
+                    // exit();
+                }
+                elseif($emailAddress == $email && !password_verify($loginPassword, $password) && $verified == true){
+                    // header("Location: LoginPage.php");
+                    $error = "Password is incorrect";
+                    echo '<script>
+                    window.onload = function() {
+                        var errorRepo = document.getElementById("errorRepo");
+                        errorRepo.innerText = "'. $error .'";
+                        };
+                    </script>';
                     exit();
                 }
 
             }
             else{
                 $error = $notRegistered;
-                $_SESSION['error'] = $error;
-                header("Location: SignUpPage.php");
+                echo '<script>
+                    window.onload = function() {
+                        var errorRepo = document.getElementById("errorRepo");
+                        errorRepo.innerText = "'. $error .'";
+                        };
+                    </script>';
                 exit();
             }
         }
@@ -83,5 +92,6 @@
     if(  isset($_POST["submitLogin"]) == true  ){
         login($loginEmail, $loginPassword, $notRegistered, $createConnection, $notVerified, $incorrectDetails, $error );
     }
+    
     
 ?>

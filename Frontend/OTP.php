@@ -7,7 +7,6 @@
     $accVerified = "Your Account has been verified, you may now login";
 
     
-
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $otp = $_POST["otp"];
         $intOTP = (int)$otp;
@@ -28,21 +27,39 @@
                 $updateBool1 = mysqli_query($createConnection, $updateBool);
                 $updateOTP1 = mysqli_query($createConnection, $updateOTP);
                 if($updateBool1 == true && $updateOTP1 == true){
-                    echo  $accVerified;
-                    header("Location: LoginPage.php");
+                    $error =  $accVerified;
+                    header("Location: LoginPage.php?error=" . urlencode($error));
                     exit();
                 }
                 else{
-                    echo "<p>Data not inserted</p>";
+                    $error =  "<p>Data not inserted</p>";
+                    echo '<script>
+                        window.onload = function() {
+                            var errorRepo = document.getElementById("errorRepo");
+                            errorRepo.innerText = "'. $error .'";
+                        };
+                    </script>';
                 }
 
             }
             else{
-                echo $invalidOTP;
+                $error =  $invalidOTP;
+                echo '<script>
+                    window.onload = function() {
+                        var errorRepo = document.getElementById("errorRepo");
+                        errorRepo.innerText = "'. $error .'";
+                    };
+                </script>';
             }
         }
         else{
-            echo "Error";
+            $error =  "Error";
+            echo '<script>
+                window.onload = function() {
+                    var errorRepo = document.getElementById("errorRepo");
+                    errorRepo.innerText = "'. $error .'";
+                };
+            </script>';
         }
 
 
@@ -89,20 +106,9 @@
         <div class="container">
             <div id="phone_icon"><ion-icon name="phone-portrait-outline"></ion-icon></div><br>
             <h2>Verification</h2><br>
-            <p id="errorReport" style="display: flex; justify-content: center;"><?php 
-                  if(!isset($_SESSION['error'])){
-                    echo "";
-                  }
-                  else{
-                    echo $_SESSION['error'];
-                    if(header("Location: SignUpPage.php")){
-                      unset($_SESSION['error']);
-                    }
-                  }
-      ?></p> 
             <p>Enter <b>OTP code</b> sent to your number:</p><br>
             <input type="password" id="otp_code" placeholder="Enter OTP here" name="otp"><br>
-            <p><?php echo $invalidOTP;?></p><br>
+            <p id="errorRepo"></p>
             <button name="submitOTP"><a href="LoginPage.php"><b>Verify</b></a></button><br><br>
              <button id="resendEmail" name="resendEmail" style="width: 10em;">Resend Email</button>
             <br>
