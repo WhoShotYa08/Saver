@@ -1,6 +1,14 @@
 <?php 
     include "dBConnection.php";
-    
+    if (isset($_GET['error'])) {
+      $error = $_GET['error'];
+      echo '<script>
+          window.onload = function() {
+              var errorRepo = document.getElementById("errorRepo");
+              errorRepo.innerText = "'. $error .'";
+          };
+      </script>';
+  }
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +20,23 @@
     <link rel="stylesheet" href="SignUpPage.css" />
     <script src="password.js" defer></script>
   </head>
+
   <body>
+
   <style>
+    body {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    min-height: 100vh;
+    background-image:linear-gradient(to bottom left,orange 50%,white 50%) ;
+} 
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
     .signup-box {
     position: relative;
     background-color: whitesmoke;
@@ -21,14 +44,33 @@
     border-radius: .5em;
     border: solid rgb(230, 230, 230);
     }
-  </style>
+
+      @keyframes fadeIn {
+      from {
+          opacity: 0;
+          transform: translateY(50px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      }
+     
+    button a:hover {
+    color: black;
+
+    
+  }
+    </style>
+
+
   <!-- Sign-up form -->
-  <div class="signup-box">     
+  <section>
+  <div class="signup-box"  style="animation: fadeIn 1s ease;">     
     <form action="" method="POST" >
       <!-- Heading for signup field -->
       <h2>Sign-Up</h2>
-        
-      <p> <?php $notRegistered; ?> </p>
+      <p id="errorRepo" style="display: flex; justify-content:center; color: red;"></p>
       <!-- Full name input field -->
       <div class="input-box">
           <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
@@ -97,6 +139,6 @@
    <!-- Ionicons script to display icons in input fields -->
    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
-
+   </section>
   </body>
 </html>

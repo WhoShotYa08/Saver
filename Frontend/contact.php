@@ -48,8 +48,8 @@
     
             <nav>
                 <ul>
-                    <li><a href="#" class="icons" id="logo"><ion-icon name="logo-html5"></ion-icon></ion-icon></a></li>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="height: 1em"></a></li>
+                    <li><a href="./pnp.php">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="./services.php">Service</a></li>
                     <li><a href="./contact.php">Contact</a></li>
@@ -59,19 +59,19 @@
                         <a href="./profile.php" class="icons" id="profile_icon"><ion-icon name="person-circle-outline"></ion-icon></a>
                         
                         <!-- shopping cart icon -->
-                        <a href="#" class="icons" id="cart_icon"><ion-icon name="cart-outline"></ion-icon></a>
+                        <a href="./ProductBoxesDetails.php" class="icons" id="cart_icon"><ion-icon name="cart-outline"></ion-icon></a>
                 </div>
             </nav>
             
         </div>
     </header>
 
-    <div class="border">
+    <div class="border animated-border">
         <span>.</span>
     </div>
 
     <section class="section">
-    <div class="login-box">
+    <div class="login-box animated-login-box">
         <form action="" method="post">
         <h2>Contact</h2> <br>
         <div class="box">
@@ -87,10 +87,10 @@
             </div>
             </div>
             <div class="p-container">
-            <p>Address <br>732 Coster Avenue <br>Johannesburg South <br>2998 <br><br> <b>Email:</b><br>special4You@business.co.za <br><br>Phone: <br> 0723567891</p>
+            <p><b>Address:</b> <br>732 Coster Avenue <br>Johannesburg South <br>2998 <br><br> <b>Email:</b><br>special4You@business.co.za <br><br><b>Phone:</b> <br> 0723567891</p>
             </div>
         </div>
-        <button>Submit</button>
+        <button class="animated-button">Submit</button>
         </form>
     </div>
     </section>
@@ -112,12 +112,12 @@
     </div>
     </section>
 
-      <script>
-    setTimeout(function() {
-        var advertSection = document.getElementById("advert");
-        advertSection.style.display = "block";
-    }, 3000);
-</script>
+    <script>
+        setTimeout(function() {
+            var advertSection = document.getElementById("advert");
+            advertSection.style.display = "block";
+        }, 4000);
+    </script>
     
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

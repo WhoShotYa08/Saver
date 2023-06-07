@@ -30,6 +30,20 @@ body {
     font-size: 10em;
     color: whitesmoke;
 }
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Start and end position */
+    }
+    50% {
+        transform: translateY(-10px); /* Mid-point position, adjust as needed */
+    }
+}
+
+#phone_icon {
+    /* ...existing styles... */
+    animation: bounce 1.5s infinite; /* Apply the bounce animation */
+}
+
 
 #otp_code {
     border-radius: 10px;border: none;
@@ -54,6 +68,7 @@ button a {
     text-decoration: none;
 }
 #resendEmail{
+    
     background: none;
     border: none;
     color: blue;
