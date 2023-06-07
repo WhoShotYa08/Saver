@@ -23,11 +23,9 @@
   </div>
 
   <script>
-    // Retrieve the Results array from local storage
     const resultsData = localStorage.getItem("Results");
     const Results = JSON.parse(resultsData);
 
-    // Iterate over the Results array and display the product boxes
     const container = document.querySelector(".ProductContainer");
     Results.forEach(item => {
       const box = document.createElement("div");
@@ -38,7 +36,7 @@
       box.style.borderRadius = "20px";
       box.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
       box.style.paddingLeft = "10px";
-      box.style.display = "inline-block"; // Display boxes in a row
+      box.style.display = "inline-block"; 
       box.style.marginRight = "20px";
 
       const imgElement = document.createElement("img");
@@ -47,39 +45,42 @@
       imgElement.style.height = "150px";
       box.appendChild(imgElement);
 
-      // Add other product details as needed
-      const detailsList = document.createElement("ul"); // Create a list
+      const detailsList = document.createElement("ul"); 
+      let counter = 0;
       for (const key in item) {
         if (key !== "image") {
           const value = item[key];
-          const listItem = document.createElement("li"); // Create a list item
-          listItem.textContent = `${key}: ${value}`;
-          detailsList.appendChild(listItem); // Add list item to the list
+          const listItem = document.createElement("li");
+          listItem.textContent = `${key}: ${value} `;
+          detailsList.appendChild(listItem);
+          
+          counter++;
+          if (counter === 3) {
+            break; // Exit the loop after the third iteration
+          }
         }
       }
-      box.appendChild(detailsList); // Add the list to the box
 
+      box.appendChild(detailsList); 
       const plusButton = document.createElement("button");
       plusButton.textContent = "+";
       plusButton.style.fontWeight = "bold";
       plusButton.style.fontSize = "20px";
       box.appendChild(plusButton);
 
-      // Get the third item value from the object/array
       const thirdItem = item[Object.keys(item)[2]];
 
-      // Set up a click event listener for the plus sign button
       let count = 0;
       plusButton.addEventListener("click", () => {
         count++;
         const newValue = thirdItem * count;
 
-        // Update the value in the object/array
         item[Object.keys(item)[2]] = newValue;
 
-        // Update the corresponding list item in the box
         const listItems = detailsList.getElementsByTagName("li");
         listItems[2].textContent = `${Object.keys(item)[2]}: ${newValue}`;
+        console.log(count);
+        
       });
 
       container.appendChild(box);
