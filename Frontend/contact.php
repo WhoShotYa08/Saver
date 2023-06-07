@@ -41,6 +41,16 @@
         </nav>
     </header> -->
 
+    <style>
+        .profile_cart {
+    font-size: .7em;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -4em;
+    padding: 10px;
+    
+}
+    </style>
     <header>
         <div class="navbar">
     

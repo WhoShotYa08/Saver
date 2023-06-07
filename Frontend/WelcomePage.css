@@ -1,6 +1,8 @@
 body {
     background-color: #E7DEDE;
-    min-width: auto;
+    
+    width: 120%;
+    background-image:linear-gradient(to bottom left,orange 50%,white 50%) ;
 }
 .container {
     position: absolute;
@@ -15,6 +17,30 @@ body {
     margin-right: auto;
     
 }
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .content {
+    animation: fadeIn 3s ease-in-out;
+  }
+  
+
 .image{
     z-index: 1;
     display: flex;
@@ -25,9 +51,11 @@ body {
 
 }
 img{
+    margin-top: 4em;
+    width: 40%;
     z-index: 2;
     max-width: 100%;
-    height: auto;
+    height: 50%;
 }
 header{
     display: flex;
