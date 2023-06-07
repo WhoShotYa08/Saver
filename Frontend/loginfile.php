@@ -9,6 +9,9 @@
     $notVerified = "Your account has not been verified.";
     $incorrectDetails = "Incorrect login details. Please try again";
     $error;
+
+    
+
     function login($loginEmail, $loginPassword, $notRegistered, $createConnection, $notVerified, $incorrectDetails, $error ){
         if( $_SERVER['REQUEST_METHOD']  == 'POST' ){
 
@@ -18,19 +21,27 @@
     
             //get login values from database
             $getEmailAddress = "SELECT emailAddress, userPassword, verified FROM signUp_details WHERE emailAddress='$emailAddress'";
+            
     
             //run query
             $runEmail = mysqli_query($createConnection, $getEmailAddress);
 
     
             $checkEmailAvailability = mysqli_num_rows($runEmail);
+            
 
             //storing results in associative array
             $results = mysqli_fetch_assoc($runEmail);
-
+            if($results == 0){
+                // header("Location: LoginPage.php");
+                $error = $notRegistered;
+                header("Location: SignUpPage.php?error=" . urlencode($error));
+                exit();
+            }
             $email = $results["emailAddress"];
             $password = $results["userPassword"];
             $verified = $results["verified"];
+            
 
             // password_verify($loginPassword, $password);
     
@@ -61,6 +72,7 @@
                         errorRepo.innerText = "'. $error .'";
                         };
                     </script>';
+                    
                     // exit();
                 }
                 elseif($emailAddress == $email && !password_verify($loginPassword, $password) && $verified == true){
@@ -76,16 +88,9 @@
                 }
 
             }
-            else{
-                $error = $notRegistered;
-                echo '<script>
-                    window.onload = function() {
-                        var errorRepo = document.getElementById("errorRepo");
-                        errorRepo.innerText = "'. $error .'";
-                        };
-                    </script>';
-                exit();
-            }
+            // elseif($checkEmailAvailability==0){
+                
+            // }
         }
     }
 
