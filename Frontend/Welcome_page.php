@@ -29,7 +29,7 @@
     </nav>
 
     <nav class="HeaderTwo">
-        <button><a href="./LoginPage.php"></a>Login</button>
+        <a href="./LoginPage.php" style="color: white;">Login</a>
         <button type="button" id="redirectButton">Sign Up</button>
     </nav>
 
