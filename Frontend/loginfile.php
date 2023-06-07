@@ -17,7 +17,8 @@
     $notRegistered = "You are not a registered user, Please sign up";
     $notVerified = "Your account has not been verified.";
     $incorrectDetails = "Incorrect login details. Please try again";
-    function login($loginEmail, $loginPassword, $notRegistered, $createConnection, $notVerified, $incorrectDetails ){
+    $error;
+    function login($loginEmail, $loginPassword, $notRegistered, $createConnection, $notVerified, $incorrectDetails, $error ){
         if( $_SERVER['REQUEST_METHOD']  == 'POST' ){
 
             //Getting Form Data
@@ -52,29 +53,35 @@
                 }
                 elseif($emailAddress == $email && password_verify($loginPassword, $password) && $verified == false ){
                     header("Location: OTP.php");
+                    $error = "Your account is not verified, please enter the OTP sent to your email";
+                    $_SESSION['error'] = $error;
                     $otpCode = rand(10000, 99999);
                     $updateOTP = "UPDATE signUp_details SET otp = '$otpCode' WHERE emailAddress = '$emailAddress'";
                     mysqli_query($createConnection, $updateOTP);
                     include "sendEmail.php";
-                    $notVerified;
+                    // $notVerified;
                     exit();
                 }
-                elseif( ($emailAddress == $email && password_verify($loginPassword, $password) && $verified == true) || ($emailAddress != $email && $loginPassword == $password && $verified == true ) ){
-                    echo $incorrectDetails;
+                elseif( ($emailAddress == $email && !password_verify($loginPassword, $password) && $verified == true) || ($emailAddress != $email && $loginPassword == $password && $verified == true ) ){
+                    
+                    $error =  "Incorrect login details. Please try again";
+                    $_SESSION['error'] = $error;
                     header("Location: LoginPage.php");
                     exit();
                 }
 
             }
             else{
-                $notRegistered;
+                $error = $notRegistered;
+                $_SESSION['error'] = $error;
                 header("Location: SignUpPage.php");
+                exit();
             }
         }
     }
 
     if(  isset($_POST["submitLogin"]) == true  ){
-        login($loginEmail, $loginPassword, $notRegistered, $createConnection, $notVerified, $incorrectDetails );
+        login($loginEmail, $loginPassword, $notRegistered, $createConnection, $notVerified, $incorrectDetails, $error );
     }
     
 ?>

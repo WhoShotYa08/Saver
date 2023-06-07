@@ -27,7 +27,17 @@
     <form action="" method="POST" >
       <!-- Heading for signup field -->
       <h2>Sign-Up</h2>
-        
+      <p id="errorReport" style="display: flex; justify-content: center;"><?php 
+                  if(!isset($_SESSION['error'])){
+                    echo "";
+                  }
+                  else{
+                    echo $_SESSION['error'];
+                    if(header("Location: SignUpPage.php")){
+                      unset($_SESSION['error']);
+                    }
+                  }
+      ?></p> 
       <p> <?php $notRegistered; ?> </p>
       <!-- Full name input field -->
       <div class="input-box">
