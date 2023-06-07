@@ -1,8 +1,6 @@
 <?php 
-    include "loginfile.php";
-    include "forgotPassword.php";
-    // include "facebookLogin.php";
-    // include "logout.php";
+    session_start();
+    include "commentsPage.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,9 +48,9 @@
                 <ul>
                     <li><a href="#" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="height: 1em"></a></li>
                     <li><a href="./pnp.php">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    
                     <li><a href="./services.php">Service</a></li>
-                    <li><a href="./contact.php">Contact</a></li>
+                    <li><a href="./contact.php">Contact Us</a></li>
 
                 </ul>
                 <div class="profile_cart">
@@ -77,20 +75,20 @@
         <div class="box">
             <div class="grid-container">
             <div class="input-container">
-                <input type="text" id="name" placeholder="Name">
+                <input type="text" id="name" placeholder="Name" name="cus_name">
             </div>
             <div class="input-container">
-                <input type="text" id="email" placeholder="Email Address">
+                <input type="text" id="email" placeholder="Email Address" name="cus_emailAddress">
             </div>
             <div class="input-container">
-                <input type="text" id="comment" placeholder="Comment">
+                <input type="text" id="comment" placeholder="Comment" name="cust_comment">
             </div>
             </div>
             <div class="p-container">
             <p><b>Address:</b> <br>732 Coster Avenue <br>Johannesburg South <br>2998 <br><br> <b>Email:</b><br>special4You@business.co.za <br><br><b>Phone:</b> <br> 0723567891</p>
             </div>
         </div>
-        <button class="animated-button">Submit</button>
+        <button class="animated-button" name="submitComments">Submit</button>
         </form>
     </div>
     </section>

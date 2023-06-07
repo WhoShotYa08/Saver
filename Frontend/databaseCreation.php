@@ -66,9 +66,14 @@
 
         $createCommentsTable = "CREATE TABLE Comments(
         CustomerID INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        CustomerName varchar(255),
+        emailAddress varchar(255),
         CommentsText varchar(1000),
         CONSTRAINT Foreign Key (CustomerID) references signUp_details (CustomerID)
         );";
+
+        // $drop = "DROP TABLE Comments";
+
 
         // mysqli_query($createConnection, $createCommentsTable);
     
