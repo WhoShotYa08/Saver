@@ -99,7 +99,7 @@
 
 
 
-      
+
       console.log(count);
     });
 
@@ -127,11 +127,22 @@
   });
 </script>
 
+<div class="buttons">
+  <a href="#">
+  <button class="button" id="shopDirectionsButton">Send to me</button>
+</a>
+</div>
 
 <div class="buttons">
   <a href="location.php">
   <button class="button" id="shopDirectionsButton">Shop Directions</button>
 </a>
 </div>
+
+
+
+
+
+
 </body>
 </html>
