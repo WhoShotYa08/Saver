@@ -17,6 +17,11 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+buttons a {
+  display: flex;
+  flex-direction: row;
+}
+
 </style>
 <body>
   <div class="ProductContainer">
@@ -51,6 +56,10 @@
       }
     imgElement.style.width = "150px";
     imgElement.style.height = "150px";
+    imgElement.style.display = "flex";
+    imgElement.style.justifyContent = "centre";
+    imgElement.style.marginRight = "100px";
+    imgElement.style.alignContent = "centre"
     box.appendChild(imgElement);
 
     const detailsList = document.createElement("ul");
@@ -84,8 +93,8 @@
     box.appendChild(minusButton);
 
     const thirdItem = item[Object.keys(item)[2]];
+    
     let count = 0;
-
     plusButton.addEventListener("click", () => {
       count++;
       const newValue = thirdItem * count;
@@ -93,16 +102,15 @@
       const listItems = detailsList.getElementsByTagName("li");
       listItems[2].textContent = `${Object.keys(item)[2]}: ${newValue}`;
 
-      const countItem = document.createElement("li");
-      countItem.textContent = `Count: ${count}`;
-      detailsList.appendChild(countItem);
-
-
+      const countItem = document.createElement("P");
+      detailsList.appendChild(countItem); 
 
 
       console.log(count);
     });
 
+
+    
     minusButton.addEventListener("click", () => {
       if (count > 0) {
         count--;
@@ -121,6 +129,10 @@
     container.appendChild(box);
   });
 
+
+
+  
+
   const shopDirectionsButton = document.getElementById("shopDirectionsButton");
   shopDirectionsButton.addEventListener("click", () => {
     window.location.href = "location.php";
@@ -128,15 +140,15 @@
 </script>
 
 <div class="buttons">
+
   <a href="#">
   <button class="button" id="shopDirectionsButton">Send to me</button>
-</a>
-</div>
+  </a>
 
-<div class="buttons">
   <a href="location.php">
   <button class="button" id="shopDirectionsButton">Shop Directions</button>
-</a>
+  </a>
+
 </div>
 
 
