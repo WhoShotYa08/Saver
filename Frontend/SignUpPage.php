@@ -25,18 +25,14 @@
 
   <style>
     body {
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
     min-height: 100vh;
     background-image:linear-gradient(to bottom left,orange 50%,white 50%) ;
 } 
 
-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
     .signup-box {
     position: relative;
     background-color: whitesmoke;
