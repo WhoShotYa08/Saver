@@ -1,6 +1,14 @@
 <?php 
     include "dBConnection.php";
-    
+    if (isset($_GET['error'])) {
+      $error = $_GET['error'];
+      echo '<script>
+          window.onload = function() {
+              var errorRepo = document.getElementById("errorRepo");
+              errorRepo.innerText = "'. $error .'";
+          };
+      </script>';
+  }
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,18 +70,7 @@ section {
     <form action="" method="POST" >
       <!-- Heading for signup field -->
       <h2>Sign-Up</h2>
-      <p id="errorReport" style="display: flex; justify-content: center;"><?php 
-                  if(!isset($_SESSION['error'])){
-                    echo "";
-                  }
-                  else{
-                    echo $_SESSION['error'];
-                    if(header("Location: SignUpPage.php")){
-                      unset($_SESSION['error']);
-                    }
-                  }
-      ?></p> 
-      <p> <?php $notRegistered; ?> </p>
+      <p id="errorRepo" style="display: flex; justify-content:center; color: red;"></p>
       <!-- Full name input field -->
       <div class="input-box">
           <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
