@@ -35,7 +35,7 @@
                     
                     <!-- The menu that will be displayed -->
                     <div class="menu">
-                        <a href="">Home</a>
+                        <a href="./pnp.php">Home</a>
                         <a href="./services.php">Services</a>
                         <a href="./contact.php">Contact</a>
                         <form action="" method="post">
@@ -46,9 +46,8 @@
                     </div>
     
                     <!-- logo icon -->
-                    <li><a href="#" class="icons" id="logo"><ion-icon name="logo-html5"></ion-icon></ion-icon></a></li>
+                    <li><a href="#" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="margin-top: -1em"></a></li>
 
-                    <span> <a href="?urlRedirect=Saver/groceryList.php" class="navBarphp">Grocery Items</a> </span>
     
                     <div class="profile_cart">
                         <a href="./profile.php" class="icons" id="profile_icon"><ion-icon name="person-circle-outline"></ion-icon></a>

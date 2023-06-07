@@ -48,8 +48,8 @@
     
             <nav>
                 <ul>
-                    <li><a href="#" class="icons" id="logo"><ion-icon name="logo-html5"></ion-icon></ion-icon></a></li>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="height: 1em"></a></li>
+                    <li><a href="./pnp.php">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="./services.php">Service</a></li>
                     <li><a href="./contact.php">Contact</a></li>
