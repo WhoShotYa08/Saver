@@ -6,7 +6,7 @@
 </head>
 <style>
 .button {
-  background-color: #4CAF50;
+  background-color: orange;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -39,13 +39,13 @@
       box.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
       box.style.paddingLeft = "10px";
       box.style.display = "inline-block"; // Display boxes in a row
+      box.style.marginRight = "20px";
 
-        const imgElement = document.createElement("img");
-        imgElement.src = item["image"];
-        imgElement.style.width = "150px";
-        imgElement.style.height = "150px";
-        box.appendChild(imgElement);
-      
+      const imgElement = document.createElement("img");
+      imgElement.src = item["image"];
+      imgElement.style.width = "150px";
+      imgElement.style.height = "150px";
+      box.appendChild(imgElement);
 
       // Add other product details as needed
       const detailsList = document.createElement("ul"); // Create a list
@@ -59,13 +59,36 @@
       }
       box.appendChild(detailsList); // Add the list to the box
 
+      const plusButton = document.createElement("button");
+      plusButton.textContent = "+";
+      plusButton.style.fontWeight = "bold";
+      plusButton.style.fontSize = "20px";
+      box.appendChild(plusButton);
+
+      // Get the third item value from the object/array
+      const thirdItem = item[Object.keys(item)[2]];
+
+      // Set up a click event listener for the plus sign button
+      let count = 0;
+      plusButton.addEventListener("click", () => {
+        count++;
+        const newValue = thirdItem * count;
+
+        // Update the value in the object/array
+        item[Object.keys(item)[2]] = newValue;
+
+        // Update the corresponding list item in the box
+        const listItems = detailsList.getElementsByTagName("li");
+        listItems[2].textContent = `${Object.keys(item)[2]}: ${newValue}`;
+      });
+
       container.appendChild(box);
     });
 
     const shopDirectionsButton = document.getElementById("shopDirectionsButton");
-  shopDirectionsButton.addEventListener("click", () => {
-    window.location.href = "location.php";
-  });
+    shopDirectionsButton.addEventListener("click", () => {
+      window.location.href = "location.php";
+    });
   </script>
 
 
