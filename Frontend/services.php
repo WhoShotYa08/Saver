@@ -14,9 +14,9 @@
     
         <nav>
             <ul>
-            <li><a href="#" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="height: 1em"></a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
+            <li><a href="./pnp.php" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="height: 1em"></a></li>
+                <li><a href="./pnp.php">Home</a></li>
+                
                 <li><a href="./services.php">Services</a></li>
                 <li><a href="./contact.php">Contact</a></li>
 
@@ -25,7 +25,7 @@
                     <a href="./profile.php" class="icons" id="profile_icon"><ion-icon name="person-circle-outline"></ion-icon></a>
                     
                     <!-- shopping cart icon -->
-                    <a href="#" class="icons" id="cart_icon"><ion-icon name="cart-outline"></ion-icon></a>
+                    <a href="./ProductBoxesDetails.php" class="icons" id="cart_icon"><ion-icon name="cart-outline"></ion-icon></a>
             </div>
         </nav>
         

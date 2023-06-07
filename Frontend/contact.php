@@ -50,9 +50,9 @@
                 <ul>
                     <li><a href="#" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="height: 1em"></a></li>
                     <li><a href="./pnp.php">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    
                     <li><a href="./services.php">Service</a></li>
-                    <li><a href="./contact.php">Contact</a></li>
+                    <li><a href="./contact.php">Contact Us</a></li>
 
                 </ul>
                 <div class="profile_cart">

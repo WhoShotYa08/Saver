@@ -22,6 +22,10 @@
         color: white;
     }
 
+    #logo {
+    font-size: .5em;
+    }
+
     @keyframes fadeIn {
     from {
         opacity: 0;
@@ -71,7 +75,7 @@
                     </div>
     
                     <!-- logo icon -->
-                    <li><a href="#" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="margin-top: -1em"></a></li>
+                    <li><a href="./pnp.php" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="margin-top: -1em; height: 7.5em"></a></li>
 
     
                     <div class="profile_cart">
