@@ -50,14 +50,28 @@
     <link rel="stylesheet" href="LoginPage.css">
 </head>
 <body>
-    <!-- Background Shape -->
-    <svg class="BackgroundShape" height="640" width="1280">
-        <polygon id="SideTriangle" points="0, 0 1300, 645 0, 645"/>
-    </svg>
+    <style>
+            @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+    </style>
+
+    <header>
+        <nav>
+            <a href="./Welcome_page.html" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="height: 3.5em"></a>
+        </nav>
+    </header>
 
     <section>
         <!-- Login Box -->
-        <div class="login-box">     
+        <div class="login-box"  style="animation: fadeIn 1s ease;">     
             <form action="changePassword.php" method="post" >
                 <h2>Change Password</h2>
                 

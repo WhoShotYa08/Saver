@@ -29,12 +29,32 @@
     <script src="login.js" defer></script>
     <link rel="stylesheet" href="LoginPage.css">
     <script src="https://kit.fontawesome.com/6e07084945.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
+    <style>
+      @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+      }
+
+    </style>
+
+    <header>
+      <nav>
+      <a href="./Welcome_page.html" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="height: 3em"></a>
+      </nav>
+    </header>
 
     <section>
         <!-- Login Box -->
-        <div class="login-box">     
+        <div class="login-box"  style="animation: fadeIn 1s ease;">     
             <form action="" method="post" >
                 <h2>Login</h2>
                 <p id="errorReport"><?php 
@@ -76,7 +96,7 @@
             </form>
             <form >
                 <div class="login-with">
-                        <button class="google-btn"><i class="fa-brands fa-google" id="google-icon" style="color: #000000;"></i>Login with google</button><br><br>
+                        
                         <button class="facebook-btn" onclick="logIn()"><i class="fa-brands fa-facebook-f" id="facebook-icon" style="color: #000000;"></i>Login with facebook</button>
                 </div>
             </form>

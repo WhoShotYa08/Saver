@@ -183,7 +183,7 @@ label {
 .toggle.open + .menu a:hover {
     background-color: orangered;
 
-    padding: 2% 30%;
+    width: 2% 28%;
     text-align: center;
     text-decoration: underline;
     color: #eee;

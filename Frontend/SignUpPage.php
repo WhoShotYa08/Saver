@@ -12,8 +12,23 @@
     <link rel="stylesheet" href="SignUpPage.css" />
     <script src="password.js" defer></script>
   </head>
+
   <body>
+
   <style>
+    body {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    min-height: 100vh;
+    background-image:linear-gradient(to bottom left,orange 50%,white 50%) ;
+} 
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
     .signup-box {
     position: relative;
     background-color: whitesmoke;
@@ -21,9 +36,29 @@
     border-radius: .5em;
     border: solid rgb(230, 230, 230);
     }
-  </style>
+
+      @keyframes fadeIn {
+      from {
+          opacity: 0;
+          transform: translateY(50px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      }
+     
+    button a:hover {
+    color: black;
+
+    
+  }
+    </style>
+
+
   <!-- Sign-up form -->
-  <div class="signup-box">     
+  <section>
+  <div class="signup-box"  style="animation: fadeIn 1s ease;">     
     <form action="" method="POST" >
       <!-- Heading for signup field -->
       <h2>Sign-Up</h2>
@@ -107,6 +142,6 @@
    <!-- Ionicons script to display icons in input fields -->
    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
-
+   </section>
   </body>
 </html>

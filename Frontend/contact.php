@@ -66,12 +66,12 @@
         </div>
     </header>
 
-    <div class="border">
+    <div class="border animated-border">
         <span>.</span>
     </div>
 
     <section class="section">
-    <div class="login-box">
+    <div class="login-box animated-login-box">
         <form action="" method="post">
         <h2>Contact</h2> <br>
         <div class="box">
@@ -90,7 +90,7 @@
             <p><b>Address:</b> <br>732 Coster Avenue <br>Johannesburg South <br>2998 <br><br> <b>Email:</b><br>special4You@business.co.za <br><br><b>Phone:</b> <br> 0723567891</p>
             </div>
         </div>
-        <button>Submit</button>
+        <button class="animated-button">Submit</button>
         </form>
     </div>
     </section>

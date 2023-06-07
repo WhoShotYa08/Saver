@@ -11,12 +11,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
     <script src="profile.js" defer></script>
     <link rel="stylesheet" href="NavigationBarStyles.css">
     <link rel="stylesheet" href="profile.css">
 </head>
 <body>
+    <style>
+        .edit_btn:hover {
+        color: white;
+    }
+
+    @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+    </style>
 
     
     <header>
@@ -57,7 +82,6 @@
                         
                     </div>
                 </ul>
-                <!-- profile icon -->
                 
             </div>
         </nav>
@@ -66,7 +90,8 @@
     <div class="border">
         <span>.</span>
     <div class="position_picture">
-            <img id="preview" src="https://png.pngtree.com/png-vector/20191103/ourmid/pngtree-handsome-young-guy-avatar-cartoon-style-png-image_1947775.jpg" alt="Preview of uploaded image" class="profile_picture">
+    <img id="preview" src="https://png.pngtree.com/png-vector/20191103/ourmid/pngtree-handsome-young-guy-avatar-cartoon-style-png-image_1947775.jpg" alt="Preview of uploaded image" class="profile_picture" style="animation: fadeIn 3s ease;">
+
         </div>
         <div class="position_picture choose_picture">
             <input type="file" id="image" onchange="previewImage()">
@@ -98,13 +123,12 @@
         }
     </script>
 
-
     <br><br><br>
 
     <form action="" method="post">
         <div class="container">
                 <div class="floatingMSG" id="floatMSG"> <?php $updateSuccessful; ?> </div>
-                <div class="profile_info">
+                <div class="profile_info" style="animation: slideIn 2s ease;">
                     <label for="name">Name</label><br>
                     <input type="text" placeholder="Daniel" value=" <?php echo $name;?>" class="proInput" name="fname" readonly ><br>
                     <label for="surname">Surname</label><br>
@@ -114,7 +138,7 @@
                     <label for="cellnumber">Cellphone number</label><br>
                     <input type="tel" placeholder="071 223 1111" value=" <?php echo '0'.$cellNum;?>" class="proInput"  name="userCellNumber" readonly ><br>
                     <button name="editButton" class="edit1 button" style="height: 40px; width:80px; background-color:orange; border-radius:10px; border:none; font-weight:bold">Update</button>
-                    <button name="deleteButton" class="edit1 button" style="height: 40px; width:80px; background-color:rgba(184, 29, 29, 0.705); border-radius:10px; border:none; font-weight:bold; position:relative; left: 85%; bottom: 8%; ">Delete</button>
+                    <button name="deleteButton" class="edit1 button" style="height: 40px; width: 85px; margin-top:-8px; background-color:rgba(184, 29, 29, 0.705); border-radius:10px; border:none; font-weight:bold; position:relative; left: 85%; bottom: 8%; ">Delete</button>
                     
                     <br>
                     <br>
