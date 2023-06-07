@@ -28,6 +28,9 @@ buttons a {
   </div>
 
   <script>
+    let count = 0;
+    const math = document.createElement("div");
+
   const resultsData = localStorage.getItem("Results");
   const Results = JSON.parse(resultsData);
 
@@ -45,7 +48,6 @@ buttons a {
     box.style.marginRight = "20px";
 
     const imgElement = document.createElement("img");
-    // imgElement.src = item["image"];
     let x = 0;
       for (const key in item){
         if( x == 3){
@@ -84,23 +86,37 @@ buttons a {
     plusButton.textContent = "+";
     plusButton.style.fontWeight = "bold";
     plusButton.style.fontSize = "20px";
-    box.appendChild(plusButton);
+    math.appendChild(plusButton);
+
+    const res =document.createElement("span");
+    res.textContent = count;
+    res.style.fontWeight = "bold";
+    res.style.fontSize = "20px";
+    math.appendChild(res);
+
 
     const minusButton = document.createElement("button");
     minusButton.textContent = "-";
     minusButton.style.fontWeight = "bold";
     minusButton.style.fontSize = "20px";
-    box.appendChild(minusButton);
+    math.appendChild(minusButton);
+
+    box.appendChild(math);
 
     const thirdItem = item[Object.keys(item)[2]];
+
     
-    let count = 0;
+
+
     plusButton.addEventListener("click", () => {
       count++;
       const newValue = thirdItem * count;
       item[Object.keys(item)[2]] = newValue;
       const listItems = detailsList.getElementsByTagName("li");
       listItems[2].textContent = `${Object.keys(item)[2]}: ${newValue}`;
+      res.textContent = count;
+
+
 
       const countItem = document.createElement("P");
       detailsList.appendChild(countItem); 
@@ -117,10 +133,12 @@ buttons a {
         const newValue = thirdItem * count;
         item[Object.keys(item)[2]] = newValue;
         const listItems = detailsList.getElementsByTagName("li");
+        res.textContent = count;
         listItems[2].textContent = `${Object.keys(item)[2]}: ${newValue}`;
 
         const countItem = detailsList.querySelector("li:last-child");
         detailsList.removeChild(countItem);
+
 
         console.log(count);
       }
@@ -150,10 +168,6 @@ buttons a {
   </a>
 
 </div>
-
-
-
-
 
 
 </body>
