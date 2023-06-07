@@ -5,9 +5,9 @@
     padding: 0;
 }
 
-#logo {
+/* #logo {
     height: 1em;
-}
+} */
 
 .border {
     color: orange;
@@ -113,14 +113,7 @@ nav ul {
 
 }
 
-.profile_cart {
-    font-size: .7em;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: -6.5em;
-    padding: 10px;
-    
-}
+
 
 
 section {

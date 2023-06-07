@@ -8,19 +8,28 @@
     <title>Document</title>
 </head>
 <body>
-
+    <style>
+        .navclass{
+            color: black;
+            text-decoration: none;
+            z-index: 20;
+        }
+        .navclass:hover {
+            color: whitesmoke;
+            text-decoration: underline;
+        }
+    </style>
 
 <header>
 
     <nav class="HeaderOne">
-        <a style="color: #FFA133;">Home</a>
-        <a>About</a>
-        <a>Service</a>
-        <a>Contact</a>
+        <a href="./Welcome_page.html" class="navclass">Home</a>
+        <a href="./services.php" class="navclass">services</a>
+        <a href="./contact.php" class="navclass">Contact</a>
     </nav>
 
     <nav class="HeaderTwo">
-        <a href="LoginPage.php">Login</a>
+        <button><a href="./LoginPage.php"></a>Login</button>
         <button type="button" id="redirectButton">Sign Up</button>
     </nav>
 
@@ -38,11 +47,6 @@
 </div> 
 
 
-<div class="container">
-    <svg class="Shape" viewBox="0 0 150 100">
-        <polygon id="SideTriangle" points="150,0 0,100 150,100"/>
-    </svg>
-</div> 
 
 <script>
     const redirectButton = document.getElementById("redirectButton");
