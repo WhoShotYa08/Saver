@@ -23,7 +23,7 @@
 <header>
 
     <nav class="HeaderOne">
-        <a href="./Welcome_page.html" class="navclass">Home</a>
+        <a href="./Welcome_page.php" class="navclass">Home</a>
         <a href="./services.php" class="navclass">services</a>
         <a href="./contact.php" class="navclass">Contact</a>
     </nav>
