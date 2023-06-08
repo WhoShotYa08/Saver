@@ -15,10 +15,11 @@
         <nav>
             <ul>
             <li><a href="./pnp.php" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="height: 1em"></a></li>
-                <li><a href="./pnp.php">Home</a></li>
+                <li><a href="./Welcome_page.php">Home</a></li>
                 
                 <li><a href="./services.php">Services</a></li>
                 <li><a href="./contact.php">Contact</a></li>
+                <li><a href="./pnp.php">Shopping Items</a></li>
 
             </ul>
             <div class="profile_cart">

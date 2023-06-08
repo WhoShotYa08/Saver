@@ -6,15 +6,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="services.css">
     <title>Document</title>
 </head>
 <body>
+<header>
+        <div class="navbar">
+    
+        <nav>
+            <ul>
+            <li><a href="./pnp.php" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="height: 1em"></a></li>
+                <li><a href="./Welcome_page.php">Home</a></li>
+                
+                <li><a href="./services.php">Services</a></li>
+                <li><a href="./contact.php">Contact</a></li>
+                <li><a href="./pnp.php">Contact</a></li>
+            </ul>
+            <div class="profile_cart">
+                    <a href="./profile.php" class="icons" id="profile_icon"><ion-icon name="person-circle-outline"></ion-icon></a>
+                    
+                    <!-- shopping cart icon -->
+                    <a href="./ProductBoxesDetails.php" class="icons" id="cart_icon"><ion-icon name="cart-outline"></ion-icon></a>
+            </div>
+        </nav>
+        
+    </div>
+    </header>
+
 
 <form method="get" action="SearchBarDetails.php">
   <input type="text" id="input-field" name="search" placeholder="Search In Specials4You">
   <div id="output" class="result-container"></div>
   <input type="hidden" id="result-data" name="resultData">
 </form>
+
 
 <a href="ProductBoxesDetails.php">
 <div class="Cart">

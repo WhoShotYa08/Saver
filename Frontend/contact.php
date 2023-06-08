@@ -52,15 +52,16 @@
 }
     </style>
     <header>
-        <div class="navbar">
+        <div class="navbar" style="margin-top: 2%;">
     
             <nav>
                 <ul>
                     <li><a href="#" class="icons" id="logo"><img src="./1678467425782-thumbnail 1.jpg" alt="LOGO" style="height: 1em"></a></li>
-                    <li><a href="./pnp.php">Home</a></li>
+                    <li><a href="./Welcome_page.php">Home</a></li>
                     
                     <li><a href="./services.php">Service</a></li>
                     <li><a href="./contact.php">Contact Us</a></li>
+                    <li><a href="./pnp.php">Shopping Items</a></li>
 
                 </ul>
                 <div class="profile_cart">
@@ -103,7 +104,7 @@
     </div>
     </section>
 
-    <section class="section2">
+    <section class="section2" style="margin-bottom: 3.5%;">
     <div id="advert" style="display: none;">
         <h1>Advertisements</h1>
         <div class="main-advert">
